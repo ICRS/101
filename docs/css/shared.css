@@ -6,3 +6,15 @@ body {
 .navbar {
   margin-bottom: 20px;
 }
+
+.frontsmallpic {
+  max-width: 86%;
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-bottom: 5%;
+}
+
+.jumbotron {
+  padding-bottom: 24px;
+  padding-top: 30px;
+}
