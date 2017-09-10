@@ -1,0 +1,16 @@
+<div class="image-thumbnail">
+    <table>
+        <tbody>
+            <tr>
+              <td>
+                <a href="{{ include.url | relative_url }}">
+                  <img src="{{ include.url | relative_url }}" alt="{{ include.description }}"/>
+                </a>
+              </td>
+            </tr>
+          {% if include.description %}
+            <tr><td><div style="text-align: center"><em>{{ include.description }}</em></div></td></tr>
+          {% endif %}
+        </tbody>
+    </table>
+</div>

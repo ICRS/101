@@ -1,0 +1,36 @@
+---
+---
+@import "cayman.css";
+
+body {
+  padding-top: 70px;
+}
+
+@media (min-width: 979px) {
+  nav li.dropdown:hover > div.dropdown-menu {
+    display: block;
+  }
+}
+
+.image-thumbnail {
+  table {
+    width: initial;
+    margin: 0px auto;
+    display: table;
+  }
+
+  img {
+    width: 100%;
+    max-width: 30rem;
+  }
+
+  margin-bottom: 1rem;
+}
+
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+}

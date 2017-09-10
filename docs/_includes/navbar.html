@@ -1,0 +1,82 @@
+<nav class="navbar navbar-toggleable-md fixed-top navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a href="{{ '/' | relative_url }}" class="navbar-brand">
+    <img width="30" height="30" src="{{ '/assets/img/circle-logo.png?v=' | append: site.github.build_revision | relative_url }}" />
+  </a>
+
+  {% assign html_pages = site.html_pages | sort: 'lesson' %}
+  {% assign html_pages_for_instructor = site.html_pages | sort: 'instructor_lesson' %}
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav">
+
+      {% assign is_lesson_page = nil %}
+      {% assign is_instructor_page = nil %}
+      {% for p in html_pages %}
+        {% if p.lesson %}
+          {% if p.url == page.url %}
+            {% assign is_lesson_page = 1 %}
+          {% endif %}
+        {% endif %}
+
+        {% if p.instructor_lesson %}
+          {% if p.url == page.url %}
+            {% assign is_instructor_page = 1 %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      <li class="nav-item dropdown {% if is_lesson_page %}active{% endif %}">
+        <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lessons</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          {% for p in html_pages %}
+            {% if p.lesson %}
+              {% if p.lesson == 0 or p.lesson >= 999 %}
+                <a class="dropdown-item {% if p.url == page.url %}active{% endif %}"
+                   href="{{ p.url | relative_url }}">{{ p.title }}</a>
+              {% else %}
+                <a class="dropdown-item {% if p.url == page.url %}active{% endif %}"
+                      href="{{ p.url | relative_url }}">Lesson {{ p.lesson }}</a>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </li>
+
+      <li class="nav-item dropdown {% if is_instructor_page %}active{% endif %}">
+        <a class="nav-link dropdown-toggle" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Instructors</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown02">
+          {% for p in html_pages_for_instructor %}
+            {% if p.instructor_lesson %}
+              {% if p.instructor_lesson == 0 or p.instructor_lesson >= 999 %}
+                <a class="dropdown-item {% if p.url == page.url %}active{% endif %}"
+                   href="{{ p.url | relative_url }}">{{ p.title }}</a>
+              {% else %}
+                <a class="dropdown-item {% if p.url == page.url %}active{% endif %}"
+                      href="{{ p.url | relative_url }}">Lesson {{ p.instructor_lesson }}</a>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </li>
+
+
+
+
+      {% for p in html_pages %}
+        {% if p.instructors %}
+          <li class="nav-item">
+            <a class="nav-link {% if p.url == page.url %}active{% endif %}" href="{{ '/instructors' | relative_url }}">Instructors</a>
+          </li>
+        {% elsif p.contact %}
+          <li class="nav-item">
+            <a class="nav-link {% if p.url == page.url %}active{% endif %}" href="{{ '/contact' | relative_url }}">Contact</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+
+    </ul>
+  </div>
+</nav>
