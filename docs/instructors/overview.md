@@ -9,6 +9,22 @@ Welcome to Robotics 101. If you're reading this, it's likely that you're someone
 
 We do intend the course to be organised by people with experience of electronics and basic programming. There's nothing too challenging in here, but we strongly recommend that you do build a 101 robot from scratch yourself before teaching the course so you know the difficulties involved.
 
+# License and Attribution
+
+tl; dr - we are glad that you like the course. Please attribute "Imperial
+College Robotics Society (ICRS)", and optionally links to [icrs.io](http://icrs.io/) and
+[101.icrs.io](http://101.icrs.io/) when you use any of the course contents.
+
+ICRS 101 is licensed under Creative Commons By 4.0. The contents are licensed
+under conditions states in [the LICENSE file on github](https://github.com/ICRS/101/blob/master/LICENSE).
+For an overview of the license, you can view [creative common's overview of the license](https://creativecommons.org/licenses/by/4.0/).
+Should there be any inconsistency in the information in the two links above,
+information in the LICENSE file takes precedence.
+
+Attribution should be made directly to _Imperial College Robotics Society (ICRS)_.
+A link to [icrs.io](icrs.io) and / or [101.icrs.io](101.icrs.io) is
+recommended, but not mandatory.
+
 # Space and Equipment
 
 The first thing to think about when you want to run 101 is what space you want to teach it in. This can be anything from a full-on electronics lab to just a classroom. We have designed the course so there's no use of power tools during the lessons - any soldering is done before-hand. That being said, there are some minor hand tools that are needed for the course:
