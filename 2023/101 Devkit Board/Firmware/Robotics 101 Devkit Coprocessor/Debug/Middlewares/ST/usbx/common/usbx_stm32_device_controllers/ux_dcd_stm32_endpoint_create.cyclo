@@ -1,0 +1,2 @@
+../Middlewares/ST/usbx/common/usbx_stm32_device_controllers/ux_dcd_stm32.h:141:46:_stm32_ed_get	4
+../Middlewares/ST/usbx/common/usbx_stm32_device_controllers/ux_dcd_stm32_endpoint_create.c:76:7:_ux_dcd_stm32_endpoint_create	4

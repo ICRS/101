@@ -1,20 +1,11 @@
-# ICRS Robotics 101
+# Robotics 101
 
-Robotics 101 ([101.icrs.io](101.icrs.io)) is an open-source introductory
-robotics course that we conduct throughout the academic year. Students build
-and program a simple robot (in python) in this course to navigate a simple
-maze. No prior experience in robotics and programming is required in this
-course.
+### What is robotics 101?
+It is an annual event run buy Imperial College Robotics Society to teach students about the basics of robotics.
 
-You all free to use the contents of the course and even make any further
-adaptations that suite your need. The contents of the course is distributed
-under Creative Commons BY 4.0
+### Versions:
+* [2016](2016/README.md)
+* [2023](2023/README.md)
 
-Attribution should be made to "Imperial College Robotics Society (ICRS)"
-and optionally (not governed by the license), with a link to
-[icrs.io](icrs.io) and/or [101.icrs.io](101.icrs.io).
 
-## Copyright and License
-
-All files and course contents are distributed under the conditions stated
-in the file LICENSE.
+If you are here for information on the 101 devkit, click [here](2023/101%20Devkit%20Board/README.md).

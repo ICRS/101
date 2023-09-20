@@ -1,0 +1,1 @@
+../Middlewares/ST/usbx/common/usbx_stm32_device_controllers/ux_dcd_stm32_endpoint_reset.c:79:7:_ux_dcd_stm32_endpoint_reset	40	static,ignoring_inline_asm
