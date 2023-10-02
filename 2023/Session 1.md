@@ -64,7 +64,7 @@ Each motor has 2 contacts that we need to connect wires to. Passing a current th
 
 [IMAGE OF MOTOR AND WIRE]
 
-Cut two lengths of wire to about [INSERT LENGTH HERE] cm and strip about 2mm to 4mm of insulation from the end. 
+Cut two lengths of wire to about 10cm and strip about 2mm to 4mm of insulation from the end. 
 
 
 
@@ -79,7 +79,7 @@ Cut two lengths of wire to about [INSERT LENGTH HERE] cm and strip about 2mm to 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We'll be using the yellow one this time.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take the tool and put your wire in the slot labelled [INSERT LABEL SIZE HERE] as shown below.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take the tool and put your wire in the slot labelled "20" as shown below.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[PICTURE OF WIRE IN STRIPPERS]
 
