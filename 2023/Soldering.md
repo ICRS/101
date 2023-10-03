@@ -12,17 +12,19 @@ In this half of the session, we will be soldering all the electronics we need fo
 
 * If you are going fast then feel free to do the sections labelled "**EXTRA**", otherwise they are fine to skip or leave to the end.
 
-[IMAGE OF SOLDERING STATIONS]
+![soldering-stations](/2023/Images/soldering-stations.JPG)
 
 ### Safety
 
 There are 8 soldering stations in the lab. For safety reasons, **there can only be 2 people at a soldering station at a time and you must wear safety specs when soldering**.
 
-If you are unsure of anything, please ask one of the committee members supervising the session.
+If you are unsure of anything or want to ask a question, please feel free to ask one of the committee members supervising the session.
 
 ### Solder and Wire
 
-There are several spools of solder on the benches and you can find wire at the far right end of the soldering benches.
+There are several spools of solder on the benches and if you need extra wire, you can find it at the far right end of the soldering benches.
+
+![wire](/2023/Images/wire.JPG)
 
 <br>
 
@@ -49,7 +51,7 @@ You can split up the work however you like between your group, but make sure eve
 
 In your bag there should be 2 motors, and 4 lengths of 10cm long wire. Each motor has 2 contacts that we need to connect wires to. Passing a current through the wires will then cause the motor to spin.
 
-[IMAGE OF MOTOR AND WIRE]
+![motors-and-wire](/2023/Images/motors-and-wire.JPG)
 
 **Task 1:** Strip about 2mm to 4mm of insulation from the end of each of the 4 wires.
 
@@ -60,17 +62,19 @@ In your bag there should be 2 motors, and 4 lengths of 10cm long wire. Each moto
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There are a number of tools in the "Cutty" section of the blue tool drawer that you can use to cut and strip wire.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[PICTURE OF CUTTY DRAW & WIRE STRIPPERS W/ GOOD ONES HIGHLIGHTED]
+![cutty-draw](/2023/Images/cutty-draw.JPG)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We'll be using the blue ones this time, but if there aren't 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We'll be using the blue ones this time, but if there aren't any available you can use the yellow or red ones. Note that you will probably have to share with other groups.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take the tool and put your wire in the slot labelled "20" as shown below.
+[IMAGE OF WIRE STRIPPERS]
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take the wire, and place it 2-4mm inside the tool, then squeeze the handle.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[PICTURE OF WIRE IN STRIPPERS]
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[PICTURE OF STRIPPED WIRE]
+![stripped-wire](/2023/Images/stripped-wire.JPG)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Then squeeze and pull your wire out, and it should be nicely stripped.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The wire should now be nicely stripped.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -78,13 +82,13 @@ In your bag there should be 2 motors, and 4 lengths of 10cm long wire. Each moto
 
 **Task 2:** Pass the ends through the contacts as shown below.
 
-[IMAGE OF MOTOR WITH WIRE IN CONTACTS]
+![wire-in-motor](/2023/Images/wire-in-motor.JPG)
 
 Bending the ends of the wires can be helpful to make them stay in place while soldering. 
 
 **Task 3:** Next solder the wires in place and repeat for the other motor.
 
-[IMAGE OF MOTOR WITH SOLDERED WIRE]
+![motor-soldered](/2023/Images/motor-soldered.JPG)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -94,9 +98,13 @@ Bending the ends of the wires can be helpful to make them stay in place while so
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To do this find the box labelled "Heat Shrink" and take enough pieces to cover each solder joint.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[IMAGE OF HEAT SHRINK BOX]
+![heat-shrink-box](/2023/Images/heat-shrink-box.JPG)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slide the heat shrink over the solder joint and heat it up by passing a soldering iron over it. It should then shrink and protect the joint. This isn't strictly necessary, but it does help.
+![heat-shrink](/2023/Images/heat-shrink.JPG)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slide the heat shrink over the solder joint and heat it up by passing a soldering iron over it. It should then shrink and protect the joint.
+
+![motors-with-heat-shrink](/2023/Images/motors-with-heat-shrink.JPG)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Note that with the battery connector, you will need to put the heat shrink on the wire before soldering it.
 
@@ -114,13 +122,17 @@ This particular switch is a slide switch, and will connect the middle pin with t
 
 The process for soldering the switch is very similar to the motors:
 
-**Task 4:** Make a cut in the red battery wire about 5cm from the end, and strip the ends like before with the motor wire.
+**Task 4:** Make a cut in the red battery wire about 6cm from the end, and strip the ends like before with the motor wire.
+
+![switch-unsoldered](/2023/Images/switch-unsoldered.JPG)
 
 **Task 5:** Thread the battery connector wire through one of the end holes in the switch, and thread the other piece of red wire through the centre hole. Again, bending the ends will help keep them in place.
 
 **Task 6:** Solder the wires in place.
 
 Your switch should look like the image [ADD IMAGE REF].
+
+![switch-soldered](/2023/Images/switch-soldered.JPG)
 
 <br>
 
@@ -133,19 +145,18 @@ The 101 Devkit contains most of the electronics needed for the robot. It include
 * 3 Screw terminals
 * (And optionally some extra pins)
 
-[PICTURE OF BOARD WITH COMPONENTS AROUND IT]
 
-![board-with-components]()
+![board-with-components](/2023/Images/board-with-components.png)
+
+If you skip ahead a bit, you can see what the finished board looks like.
 
 ### LED:
 
-**Task 7:** Choose a coloured LED from  and place it in the slot shown [above](), making sure the flat side of the LED lines up with the image on the circuit board. Then solder it in place.
+**Task 7:** Choose a coloured LED from  and place it in the slot shown above, making sure the flat side of the LED lines up with the image on the circuit board. Then solder it in place.
 
 ![led-polarity](/2023/Images/led-polarity.png)
 
 You can bend the leads outwards so the LED stays in place when upside down.
-
-[IMAGE OF LED SOLDERED IN PLACE]
 
 ### Capacitor:
 
@@ -165,6 +176,14 @@ The last component that needs to be soldered is the screw terminals, these are w
 
 Make sure the openings are facing outwards or it will be difficult to connect the wires later!
 
+![soldered-board](/2023/Images/soldered-board.JPG)
+
+**Task 9:** Using side cutters (found in the "cutty" draw), cut off the extra leads for the capacitor and LED.
+
+![finished-board](/2023/Images/finished-board.JPG)
+
+Your board is now (mostly) finished!
+
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**EXTRA: Servo Pins**
@@ -173,8 +192,18 @@ Make sure the openings are facing outwards or it will be difficult to connect th
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If there is a free soldering iron, and you want to practice some more, then find some "pin headers" in the spinny component tower and cut them so there are 6 rows of 4 pins.
 
-[PIN HEADERS IMAGE]
+![header-pins](/2023/Images/header-pins.JPG)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can then solder these in place like below.
 
+![board-with-servo](/2023/Images/board-with-servo.JPG)
+
 --------------------------------------------------------------------------------------------------------------------------------------------------
+
+<br>
+## Testing:
+
+
+[IMAGE OF WHOLE CIRCUIT]
+
+**Task 10:** Combine all the circuits together using the screw terminals, and press the button labelled "DFU" on the board to make sure it works.
