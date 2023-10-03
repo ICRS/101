@@ -1,8 +1,8 @@
 # Robotics 101: Soldering
 
-<br>
-
 ## Introduction & Instructions
+
+We use soldering to make permanent connections between components to create circuits.
 
 In this half of the session, we will be soldering all the electronics we need for the robot.
 
@@ -10,7 +10,7 @@ In this half of the session, we will be soldering all the electronics we need fo
 
 * Sections labelled "**HOW TO**" explain certain techniques, and can be skipped if you are comfortable with the technique.
 
-* If you are going fast then feel free to do the sections labelled "**EXTRA**", otherwise they are fine to skip or leave to the end.
+* If you are going fast then you can do the sections labelled "**EXTRA**", otherwise they are fine to skip or leave until the end.
 
 ![soldering-stations](/2023/Images/soldering-stations.JPG)
 
@@ -30,13 +30,34 @@ There are several spools of solder on the benches and if you need extra wire, yo
 
 If you are unfamiliar with soldering, ask your group members to see if they can explain, otherwise check out the guide below.
 
---------------------------------------------------------------------------------------------------------------------------------------------------
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**HOW TO: Soldering**
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SOLDERING HOW TO]
-
---------------------------------------------------------------------------------------------------------------------------------------------------
+><br>
+>
+>**HOW TO: Soldering**
+>
+>Below is one of the soldering stations, check that you have some solder nearby, and a mat before starting.
+>
+>![solder-area](/2023/Images/soldering-area.jpg)
+>
+>Hold the soldering iron sort of like a pen, making sure not to touch any metal parts as they will get hot.
+>
+>![holding-iron](/2023/Images/holding-iron.jpg)
+>
+>Next you are ready to turn on the iron. 350 Degrees celcius is a good temperature to use, and will ensure the solder is melted properly.
+>
+>![iron-heating](/2023/Images/iron-heating.jpg)
+>
+>Wait for the iron to heat up to the set temperature and then turn on the extractor fan using the switch on the bench.
+>
+>You can then begin warming up the joint you want to solder.
+>
+>![warmup-joint](/2023/Images/warmup-joint.jpg)
+>
+>After 10 seconds or so, the joint will be hot enough, and you can now feed in a small blob of solder.
+>
+>![feed-in-solder](/2023/Images/feed-in-solder.jpg)
+>
+>Then remove the iron and allow the joint to cool.
+><br>
 
 With that out of the way, there are 3 main parts that need to be soldered:
 * [Motors](#motors)
@@ -56,31 +77,31 @@ In your bag there should be 2 motors, and 4 lengths of 10cm long wire. Each moto
 **Task 1:** Strip about 2mm to 4mm of insulation from the end of each of the 4 wires.
 
 
---------------------------------------------------------------------------------------------------------------------------------------------------
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**HOW TO: Wire Stripping**
+><br>
+>
+>**HOW TO: Wire Stripping**
+>
+>There are a number of tools in the "Cutty" section of the blue tool drawer that you can use to cut and strip wire.
+>
+>![cutty-draw](/2023/Images/cutty-draw.JPG)
+>
+>![many-wire-strippers](/2023/Images/many-wire-strippers.jpg)
+>
+>We'll be using the blue ones this time, but if there aren't any available you can use the red or yellow ones. Note that you will probably have to share with other groups.
+>
+>Take the wire, and place it 2-4mm inside the tool, then squeeze the handle.
+>
+>![wire-strippers](/2023/Images/wire-strippers.jpg)
+>
+>![stripped-wire](/2023/Images/stripped-wire.JPG)
+>
+>The wire should now be nicely stripped.
+><br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There are a number of tools in the "Cutty" section of the blue tool drawer that you can use to cut and strip wire.
 
-![cutty-draw](/2023/Images/cutty-draw.JPG)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We'll be using the blue ones this time, but if there aren't any available you can use the yellow or red ones. Note that you will probably have to share with other groups.
-
-[IMAGE OF WIRE STRIPPERS]
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Take the wire, and place it 2-4mm inside the tool, then squeeze the handle.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[PICTURE OF WIRE IN STRIPPERS]
-
-![stripped-wire](/2023/Images/stripped-wire.JPG)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The wire should now be nicely stripped.
-
---------------------------------------------------------------------------------------------------------------------------------------------------
-
-<br>
-
-**Task 2:** Pass the ends through the contacts as shown below.
+**Task 2:** Pass the ends of the wire through the motor contacts as shown below.
 
 ![wire-in-motor](/2023/Images/wire-in-motor.JPG)
 
@@ -90,27 +111,24 @@ Bending the ends of the wires can be helpful to make them stay in place while so
 
 ![motor-soldered](/2023/Images/motor-soldered.JPG)
 
---------------------------------------------------------------------------------------------------------------------------------------------------
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**EXTRA: Heat Shrink**
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can add heat shrink over an exposed solder joint to make sure there is no risk of a short circuit. This would be useful for both the motors and the upcoming switch.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To do this find the box labelled "Heat Shrink" and take enough pieces to cover each solder joint.
-
-![heat-shrink-box](/2023/Images/heat-shrink-box.JPG)
-
-![heat-shrink](/2023/Images/heat-shrink.JPG)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slide the heat shrink over the solder joint and heat it up by passing a soldering iron over it. It should then shrink and protect the joint.
-
-![motors-with-heat-shrink](/2023/Images/motors-with-heat-shrink.JPG)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Note that with the battery connector, you will need to put the heat shrink on the wire before soldering it.
-
---------------------------------------------------------------------------------------------------------------------------------------------------
-
-<br>
+><br>
+>
+>**EXTRA: Heat Shrink**
+>
+>You can add heat shrink over an exposed solder joint to make sure there is no risk of a short circuit. This would be useful for both the motors and the upcoming switch.
+>
+>To do this find the box labelled "Heat Shrink" and take enough pieces to cover each solder joint.
+>
+>![heat-shrink-box](/2023/Images/heat-shrink-box.JPG)
+>
+>![heat-shrink](/2023/Images/heat-shrink.JPG)
+>
+>Slide the heat shrink over the solder joint and heat it up by passing a soldering iron over it. It should then shrink and protect the joint.
+>
+>![motors-with-heat-shrink](/2023/Images/motors-with-heat-shrink.JPG)
+>
+>Note that with the battery connector, you will need to put the heat shrink on the wire before soldering it.
+><br>
 
 ## Power switch:
 
@@ -184,25 +202,23 @@ Make sure the openings are facing outwards or it will be difficult to connect th
 
 Your board is now (mostly) finished!
 
---------------------------------------------------------------------------------------------------------------------------------------------------
+><br>
+>
+>**EXTRA: Servo Pins**
+>
+>The board is currently missing a couple of pins used for connecting to servo motors. However this isn't an issue since they won't be used in the course.
+>
+>If there is a free soldering iron, and you want to practice some more, then find some "pin headers" in the spinny component tower and cut them so there are 6 rows of 4 pins.
+>
+>![header-pins](/2023/Images/header-pins.JPG)
+>
+>You can then solder these in place like below.
+>
+>![board-with-servo](/2023/Images/board-with-servo.JPG)
+>
+><br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**EXTRA: Servo Pins**
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The board is currently missing a couple of pins used for connecting to servo motors. However this isn't an issue since they won't be used in the course.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If there is a free soldering iron, and you want to practice some more, then find some "pin headers" in the spinny component tower and cut them so there are 6 rows of 4 pins.
-
-![header-pins](/2023/Images/header-pins.JPG)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can then solder these in place like below.
-
-![board-with-servo](/2023/Images/board-with-servo.JPG)
-
---------------------------------------------------------------------------------------------------------------------------------------------------
-
-<br>
 ## Testing:
-
 
 [IMAGE OF WHOLE CIRCUIT]
 
