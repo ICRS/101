@@ -1,0 +1,12 @@
+../Core/Src/app_threadx.c:96:6:App_ThreadX_Init	4
+../Core/Src/app_threadx.c:136:6:tx_app_thread_entry	12
+../Core/Src/app_threadx.c:286:6:MX_ThreadX_Init	1
+../Core/Src/app_threadx.c:301:6:HAL_I2C_ListenCpltCallback	1
+../Core/Src/app_threadx.c:306:6:HAL_I2C_AddrCallback	2
+../Core/Src/app_threadx.c:323:6:HAL_I2C_SlaveRxCpltCallback	5
+../Core/Src/app_threadx.c:358:6:reset_extra_functions	1
+../Core/Src/app_threadx.c:367:6:HAL_I2C_ErrorCallback	3
+../Core/Src/app_threadx.c:385:6:motor1_start	1
+../Core/Src/app_threadx.c:391:6:motor2_start	1
+../Core/Src/app_threadx.c:397:6:motor1_update	2
+../Core/Src/app_threadx.c:408:6:motor2_update	2

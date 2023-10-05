@@ -1,0 +1,9 @@
+../USBX/App/ux_device_cdc_acm.c:78:6:USBD_CDC_ACM_Activate	16	static
+../USBX/App/ux_device_cdc_acm.c:148:6:USBD_CDC_ACM_Deactivate	16	static
+../USBX/App/ux_device_cdc_acm.c:171:6:USBD_CDC_ACM_ParameterChange	32	static
+../USBX/App/ux_device_cdc_acm.c:308:6:usbx_cdc_acm_read_thread_entry	40	static
+../USBX/App/ux_device_cdc_acm.c:373:6:usbx_cdc_acm_write_thread_entry	40	static
+../USBX/App/ux_device_cdc_acm.c:445:6:HAL_UART_TxCpltCallback	16	static
+../USBX/App/ux_device_cdc_acm.c:459:6:HAL_UART_RxCpltCallback	16	static
+../USBX/App/ux_device_cdc_acm.c:490:6:HAL_UART_ErrorCallback	16	static
+../USBX/App/ux_device_cdc_acm.c:520:13:USBD_CDC_VCP_Config	16	static
