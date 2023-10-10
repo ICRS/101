@@ -15,7 +15,7 @@ Sessions will be at 4pm and will be split between 509 (lecture room) and 505 (la
 
 * Session 2: Assembly & Mechanical (11th October)
     * [CAD instructions](/2023/Mechanical.md)
-
+    * [Assembly instructions](/2023/Assembly%20Instructions.md)
 <br>
 
 * Session 3: Software (18th October)
