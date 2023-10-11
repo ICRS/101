@@ -137,13 +137,13 @@ You can find the solution [here](#task-10-answer).
 >
 >Jumper wires come with either male or female ends.
 >
->![jumper-wires](/2023/Images/jumper-wires.jpg)
+![jumper-wires](/2023/Images/jumper-wires.jpg)
 >
 >Since both the Arduino and the breadboard have female sockets, we will need to use male-to-male wires to connect them together.
 >
 >You can find jumper wires in the "Jumper Wires" box.
 >
->![jumper-wires-box](/2023/Images/jumper-wires-box.jpg)
+![jumper-wires-box](/2023/Images/jumper-wires-box.jpg)
 ><br>
 
 
