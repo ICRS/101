@@ -201,13 +201,13 @@ Use a large valued resistor, but not too large: >10kΩ and <1MΩ.
 >
 >A button isn't very useful for a robot, but if we replace it with a sensor, e.g. an IR sensor then we can add some basic collision detection.
 >
->![ir](/2023/Images/ir.png)
+![ir](/2023/Images/ir.png)
 >
 >You can find these sensors in a drawer next to the 3D printers.
 >
 > Connect VCC to 3.3V, GND to GND and the OUT/D pin to pin D7. We don't need resistor anymore since it is on the sensor.
 >
->![ir-robot](/2023/Images/ir-robot.png)
+![ir-robot](/2023/Images/ir-robot.png)
 >
 >Now when the robot is powered on, it will go forwards until it detects an object and then it will stop.
 >
