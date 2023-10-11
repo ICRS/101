@@ -4,9 +4,9 @@ You will need a few new components to complete the chassis of your robot, so mak
 
 | Component   | Quantity    |
 | ----------- | ----------- |
-| M3 x 10mm   | 5           |
+| M3 x 8mm    | 5           |
 | M3 x 16mm   | 2           |
-| M3 Washers  | 3           |
+| M3 Spacers  | 3           |
 | Chassis     | 1           |
 | Breadboard  | 1           |
 | Wheels      | 2           |
@@ -29,7 +29,7 @@ This will make it easier to put everything together.
 
 <br>
 
-**Task 2:** Screw the Arduino into the top of the chassis using three M3 x 10mm bolts (the shorter ones) and spacers.
+**Task 2:** Screw the Arduino into the top of the chassis using three M3 x 8mm bolts (the shorter ones) and spacers.
 
 ![arduino-screwed](/2023/Images/arduino-screwed.jpg)
 
