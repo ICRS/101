@@ -157,6 +157,8 @@ Resistors and LEDs are normally in the spinny component tower.
 
 ![led-circuit-on](/2023/Images/led-circuit-on.jpg)
 
+><br>
+>
 > **Polling vs Interrupts**
 >
 >You may notice that the LED on the Arduino already is slower to respond to the button press than your new LED.
@@ -168,66 +170,105 @@ Resistors and LEDs are normally in the spinny component tower.
 
 <br>
 
-Next we'll look at how to add our own button to make the robot turn.
+In the default code, each pin has a function, some of these are shown below.
 
-In the default code, pin D6 is turn left, and pin D7 is turn right.
+| Pin   | Function     | Logic control level |
+| ----------- | ----------- | --- |
+| D2   | Go forward | Active low |
+| D5 | Turn left | Active high |
+| D6 | Turn right | Active high |
+| D7 | Go forward | Active high |
 
-[INSERT SWITCH CIRCUIT]
+By adding a button and connecting it to one of these pins, we can make the robot move.
 
+![button-circuit](/2023/Images/button-circuit.png)
 
+The resistor here is what's known as a pulldown resistor because it makes sure the voltage on the pin is low when nothing is happening.
 
+Use a large valued resistor, but not too large: >10kΩ and <1MΩ.
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+**Task 12:** Build the button circuit.
+
+![button-on-breadboard](/2023/Images/button-on-breadboard.jpg)
+
+**Task 13:** Test the circuit with D5, D6 and D7 and check that it works.
+
 <br>
 
-# Task 10 answer
+><br>
+>
+>**Extra: Replace the button with a sensor.**
+>
+>A button isn't very useful for a robot, but if we replace it with a sensor, e.g. an IR sensor then we can add some basic collision detection.
+>
+>![ir](/2023/Images/ir.png)
+>
+>You can find these sensors in a drawer next to the 3D printers.
+>
+> Connect VCC to 3.3V, GND to GND and the OUT/D pin to pin D7. We don't need resistor anymore since it is on the sensor.
+>
+>![ir-robot](/2023/Images/ir-robot.png)
+>
+>Now when the robot is powered on, it will go forwards until it detects an object and then it will stop.
+>
+>You may need to twist the potentiometer on the back with a screwdriver to adjust the range.
+>
+>Using multiple of these we could potentially use them to follow a line...
+>
+><br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Task 10 answer
 
 3.3V - 2V = 1.3V across the resistor.
 
