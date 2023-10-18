@@ -19,6 +19,8 @@ Sessions will be at 4pm and will be split between 509 (lecture room) and 505 (la
 <br>
 
 * Session 3: Software (18th October)
+    * [Software Presentation](/2023/Robotics%20101%20software.pptx)
+
 
 <br>
 
