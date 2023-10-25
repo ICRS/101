@@ -25,3 +25,4 @@ Sessions will be at 4pm and will be split between 509 (lecture room) and 505 (la
 <br>
 
 * Session 4: Testing and Competition (25th October)
+    * [Upload Troubleshooting](/2023/Troubleshooting.md)
