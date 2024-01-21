@@ -28,10 +28,9 @@ There are several spools of solder on the benches and if you need extra wire, yo
 
 <br>
 
-With that out of the way, there are 3 main parts that need to be soldered:
+With that out of the way, there are 2 main parts that need to be soldered:
 * [Motors](#motors)
 * [Power switch](#power-switch)
-* [ICRS Arduino Uno](#icrs-arduino-uno)
 
 You can split up the work however you like between your group, but make sure everyone gets a chance to solder!
 
@@ -43,7 +42,7 @@ In your bag there should be 2 motors, and 4 lengths of 10cm long wire. Each moto
 
 ![motors-and-wire](/2023/Images/motors-and-wire.JPG)
 
-**Task 1:** Strip about 2mm to 4mm of insulation from the end of each of the 4 wires.
+**Task 1:** Strip about 2mm to 4mm of insulation from both ends of each of the 4 wires.
 
 
 
@@ -147,6 +146,10 @@ The process for soldering the switch is very similar to the motors:
 
 **Task 5:** Thread the battery connector wire through one of the end holes in the switch, and thread the other piece of red wire through the centre hole. Again, bending the ends will help keep them in place.
 
+Since this wire is multi-core it might fray. you can fix this by twisting the end.
+
+Make sure you put a piece of heat shrink on **before** the next step or you won't
+
 **Task 6:** Solder the wires in place.
 
 Your switch should look like the image below.
@@ -155,87 +158,23 @@ Your switch should look like the image below.
 
 <br>
 
-## ICRS Arduino Uno:
-
-The 101 Devkit contains most of the electronics needed for the robot. It includes a WiFi/Bluetooth microcontroller, two motor drivers, and an inerial measurement unit (IMU). However it is currently missing a few components that are needed to make it work properly. The missing components are:
-
-* 1 LED
-* 1 Capacitor
-* 3 Screw terminals
-* (And optionally some extra pins)
-
-
-![board-with-components](/2023/Images/board-with-components.png)
-
-If you skip ahead a bit, you can see what the finished board looks like.
-
-### LED:
-
-**Task 7:** Choose a coloured LED from  and place it in the slot shown above, making sure the flat side of the LED lines up with the image on the circuit board. Then solder it in place.
-
-![led-polarity](/2023/Images/led-polarity.png)
-
-You can bend the leads outwards so the LED stays in place when upside down.
-
-### Capacitor:
-
-The next component to add is a large valued capacitor which will help supply energy to the motors. This one is very similar to the LED. 
-
-**Task 8:** Place the capacitor on the board in the correct orientation, bend the leads, and solder in place.
-
-The white half of the circle under the capacitor is for the negative lead, and there is a tiny "+" sign on the circuit board to indicate the positive lead.
-
-![capacitor-polarity](/2023/Images/capacitor-polarity.png)
-
-### Screw Terminals:
-
-The last component that needs to be soldered is the screw terminals, these are what we will connect the motors and battery to later. Its recommended to do these one by one.
-
-**Task 9:** Place the screw terminals in their slots, and solder in place.
-
-**Make sure the holes in the sides of the screw terminals are facing outwards** or it will be difficult to connect the wires later!
-
-![screw-terminal](/2023/Images/screw_terminal.jpg)
-
-
-
-**Task 9:** Using side cutters (found in the "cutty" draw), cut off the extra leads for the capacitor and LED.
-
-![soldered-board](/2023/Images/soldered-board.JPG)
-
-Your board is now (mostly) finished!
-
-![finished-board](/2023/Images/finished-board.JPG)
-
-><br>
->
->**EXTRA: Servo Pins**
->
->The board is currently missing a couple of pins used for connecting to servo motors. However this isn't an issue since they won't be used in the course.
->
->If there is a free soldering iron, and you want to practice some more, then find some "pin headers" in the spinny component tower and cut them so there are 6 rows of 4 pins.
->
->![header-pins](/2023/Images/header-pins.JPG)
->
->You can then solder these in place like below.
->
->![board-with-servo](/2023/Images/board-with-servo.JPG)
->
-><br>
-
 ## Testing:
 
-To make sure everything we have just soldered works, connect everything like the picture below.
+To make sure everything we have just soldered works, get the motor driver out of your bag (the red board with the big heat sink on it) and connect everything like the picture below.
 
 ![electronics-done](/2023/Images/electronics-done.jpg)
 
-You can connect the wires to the screw terminals by placing a stripped end into the hole and tightening the screw on the top until it is tight.
+You can connect the wires to the screw terminals by placing a stripped end into the hole and tightening the screw on the top until it is tight. If the connection is loose you can solder a small blob of solder to the end so the screw terminal has something to grip.
 
 Then ask a committee member for a 9V battery.
 
-**Task 10:** Combine all the soldered parts together, connect a battery and turn the switch on. When you press the button labelled "DFU", the motors should spin and the LED should turn on.
+**Task 10:** Combine all the soldered parts together, connect a battery and turn the switch on. A red LED should turn on.
 
 ![electronics-test](/2023//Images/electronics-test.jpg)
+
+You can then check the motor connections using a jumper wire as shown below:
+
+![motor-test](/2023//Images/motor-test.jpg)
 
 If for some reason something doesn't work then you can try debug it yourself, or ask for help.
 
