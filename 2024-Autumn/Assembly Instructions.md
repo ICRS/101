@@ -20,25 +20,25 @@ You will need a few new components to complete the chassis of your robot, so mak
 
 **Task 0:** Collect components in the table above.
 
-![all-components-2](/2024/Images/all-components-2.jpg)
+![all-components-2](/2024-Autumn/images/all-components-2.jpg)
 
 <br>
 
 **Task 1:** Place the breadboard in the breadboard holder and attach it to the chassis using two screws. Note that the holes in the 3D printed parts are designed to be tight. 
 
-![breadboard](/2024/Images/breadboard.jpg)
+![breadboard](/2024-Autumn/images/breadboard.jpg)
 
 <br>
 
 **Task 2:** Attach the ball wheel onto the chassis, note that two nuts will need to be used on the bottom to secure it in place.
 
-![ball-wheel](/2024/Images/ball-wheel.jpg)
+![ball-wheel](/2024-Autumn/images/ball-wheel.jpg)
 
 <br>
 
 **Task 3:** Attach the battery holder to the chassis using two more screws.
 
-![battery-holder](/2024/Images/battery-holder.jpg)
+![battery-holder](/2024-Autumn/images/battery-holder.jpg)
 
 <br>
 
@@ -46,34 +46,34 @@ You will need a few new components to complete the chassis of your robot, so mak
 
 Align the two 3D printed washers with the requisite holes. 
 
-![washers](/2024/Images/washers.jpg)
+![washers](/2024-Autumn/images/washers.jpg)
 
 Next fit two screws in the holes adjacent to the heatsink on the motor driver. Align this with the washers and lower it into place. Secure it in place by using two nuts on the opposite side. Ensure the heatsink is nearest the end of the robot. 
 
-![motor-driver](/2024/Images/motor-driver.jpg)
+![motor-driver](/2024-Autumn/images/motor-driver.jpg)
 
 <br>
 
 **Task 5:** Fit the motor brackets over the motors and secure these to the chassis using two screws for each. Ensure they are mounted to the top side of the chassis.  
 
-![mounted-motor](/2024/Images/mounted-motor.jpg)
+![mounted-motor](/2024-Autumn/images/mounted-motor.jpg)
 
 <br>
 
 
 **Task 6:** Slide the shaft adapters over the motor shafts. Then attach the wheels to the shaft adapters. Note that this requires some force, be careful not to damage any parts of the robot. 
 
-![shaft-adapter](/2024/Images/shaft-adapter.jpg)
+![shaft-adapter](/2024-Autumn/images/shaft-adapter.jpg)
 
 <br>
 
 **Task 7:** Your robot is almost assembled, fit the 9V battery into the holder and connect it to the motor driver.
 
-![9v-battery](/2024/Images/9v-battery.jpg)
+![9v-battery](/2024-Autumn/images/9v-battery.jpg)
 
 Check everything works as it did when you tested the electronics earlier. If it does, well done! Your robot is now assembled. 
 
-![assembled](/2024/Images/assembled.jpg)
+![assembled](/2024-Autumn/images/assembled.jpg)
 
 <br>
 
