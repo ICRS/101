@@ -178,8 +178,6 @@ Then ask a committee member for a 9V battery.
 
 **Task 10:** Combine all the soldered parts together, connect a battery and turn the switch on. Your motors should now be spinning. 
 
-![electronics-test](/2023//Images/electronics-test.jpg)
-
 If for some reason something doesn't work then you can try debug it yourself, or ask for help.
 
 Otherwise congratulations, you have completed the soldering section!

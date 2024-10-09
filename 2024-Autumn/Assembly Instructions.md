@@ -54,7 +54,7 @@ Next fit two screws in the holes adjacent to the heatsink on the motor driver. A
 
 <br>
 
-**Task 5:** Fit the motor brackets over the motors and secure these to the chassis using two screws for each. Ensure they are mounted to the top side of the chassis.  
+**Task 5:** Fit the motor brackets over the motors and secure these to the chassis using two screws for each. Ensure they are mounted to the top side of the chassis. Note that the screws should go through the bottom of the chassis.  
 
 ![mounted-motor](/2024-Autumn/images/mounted-motor.jpg)
 
