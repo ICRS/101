@@ -30,7 +30,8 @@ There are several spools of solder on the benches and if you need extra wire, yo
 
 With that out of the way, there are 2 main parts that need to be soldered:
 * [Motors](#motors)
-* [Power switch](#power-switch)
+* [Power Switch](#power-switch)
+* [Header Pins](#header-pins)
 
 You can split up the work however you like between your group, but make sure everyone gets a chance to solder!
 
@@ -154,6 +155,8 @@ Your switch should look like the image below.
 
 <br>
 
+## Header Pins:
+
 **Task 7:** Solder the header pins onto the devboard.
 
 Take the header pins provided and slot them into the devboard as shown, make sure they are in the same position as shown in the picture. 
@@ -166,3 +169,6 @@ Next place the devboard over the header pins. You can solder them together by pl
 
 <br>
 
+## Next steps
+
+Now the soldering is done, you can move onto the [assembly](/2024-Autumn/assembly-instructions.md)!
