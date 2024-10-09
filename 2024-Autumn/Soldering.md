@@ -166,18 +166,3 @@ Next place the devboard over the header pins. You can solder them together by pl
 
 <br>
 
-## Testing:
-
-To make sure everything we have just soldered works, connect everything like the picture below.
-
-![electronics-done](/2024-Autumn/images/electronics-done.jpg)
-
-You can connect the wires to the screw terminals by placing a stripped end into the hole and tightening the screw on the top until it is tight.
-
-Then ask a committee member for a 9V battery.
-
-**Task 10:** Combine all the soldered parts together, connect a battery and turn the switch on. Your motors should now be spinning. 
-
-If for some reason something doesn't work then you can try debug it yourself, or ask for help.
-
-Otherwise congratulations, you have completed the soldering section!
