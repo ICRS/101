@@ -4,7 +4,18 @@
 
 We use soldering to make permanent connections between components to create circuits.
 
-In this half of the session, we will be soldering all the electronics we need for the robot.
+In this half of the session, we will be soldering all the electronics we need for the robot. These are listed in the table below.
+
+| Component   | Quantity    |
+| ----------- | ----------- |
+| Motors      | 2          |
+| 9V Battery Connector  | 1           |
+| Slide Switch  | 1           |
+| Motor Driver  | 1           |
+| Header Pins  | 2           |
+| ESP32 Devboard  | 1           |
+
+You will also need 2 10 cm lengths of red wire and 2 10 cm lengths of black wire.
 
 ![all-components](/2024-Autumn/images/all-components.jpg)
 
