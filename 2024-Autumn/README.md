@@ -13,6 +13,8 @@ Sessions will be split between 408/509 (lecture rooms) and 505 (lab).
 <br>
 
 * Session 2: Electrincal (9th October)
+    * [Soldering Instructions](/2024-Autumn/Soldering.md)
+    * [Assembly Instructions](/2024-Autumn/assembly-instructions.md)
 <br>
 
 * Session 3: Software (16th October)
