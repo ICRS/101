@@ -177,3 +177,9 @@ Next place the devboard over the header pins. You can solder them together by pl
 
 <br>
 
+**Task 8:** Lastly wire the motors and motor drivers as shown in the picture. You can place the wire within the screw terminal and tighten the screws to hold the wire in place. 
+
+![motor-wired](/2024-Autumn/images/motor-wired.jpg)
+
+<br>
+
