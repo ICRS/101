@@ -86,7 +86,7 @@ Connect the ground wire (the black one) to the negative strip of the breadboard 
 
 **Task 9:** Connect the microcontroller power.
 
-Connect the +5V of the motor driver to the VBUS pin of the microcontroller. Then connect the microcontroller ground (GND) to the negative strip of the breadboard.
+Connect the +5V of the motor driver to the VBUS pin of the microcontroller using a male to male jumper wire. Then connect the microcontroller ground (GND) to the negative strip of the breadboard.
 
 ![s2-mini](/2024-Autumn/images/s2_mini.jpg)
 
@@ -102,6 +102,8 @@ The order here does matter:
 | Input2 | 37 |
 | Input3 | 35 |
 | Input4 | 33 |
+
+Make sure to use male to female jumper wires.
 
 ![motor-connections](/2024-Autumn/images/motor-connections.jpg)
 
