@@ -38,7 +38,7 @@ You can split up the work however you like between your group, but make sure eve
 
 ## Motors:
 
-In your bag there should be 2 motors, and 4 lengths of 10cm long wire. Each motor has 2 contacts that we need to connect wires to. Passing a current through the wires will then cause the motor to spin.
+In your bag there should be 2 motors, and you'll need to get 4 lengths of 10cm long wire from the end of the soldering benches. Each motor has 2 contacts that we need to connect wires to. Passing a current through the wires will then cause the motor to spin.
 
 ![motors-and-wire](/2024-Autumn/images/motors-and-wire.JPG)
 
