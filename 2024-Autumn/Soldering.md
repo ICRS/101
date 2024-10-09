@@ -7,7 +7,7 @@ We use soldering to make permanent connections between components to create circ
 In this half of the session, we will be soldering all the electronics we need for the robot.
 
 ![all-components](/2024-Autumn/images/all-components.jpg)
-Kv
+
 * Sections labelled "**HOW TO**" explain certain techniques, and can be skipped if you are comfortable with the technique.
 
 * If you are going fast then you can do the sections labelled "**EXTRA**", otherwise they are fine to skip or leave until the end.
