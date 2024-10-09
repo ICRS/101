@@ -76,6 +76,10 @@ Next fit two screws in the holes adjacent to the heatsink on the motor driver. A
 
 ![9v-battery](/2024-Autumn/images/9v-battery.jpg)
 
+## Part 2: Wiring
+
+You'll now need to add some wires to connect the motor driver to the microcontroller.
+
 Check everything works as it did when you tested the electronics earlier. If it does, well done! Your robot is now assembled. 
 
 ![assembled](/2024-Autumn/images/assembled.jpg)
