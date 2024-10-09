@@ -28,10 +28,9 @@ There are several spools of solder on the benches and if you need extra wire, yo
 
 <br>
 
-With that out of the way, there are 3 main parts that need to be soldered:
+With that out of the way, there are 2 main parts that need to be soldered:
 * [Motors](#motors)
 * [Power switch](#power-switch)
-* [ICRS Arduino Uno](#icrs-arduino-uno)
 
 You can split up the work however you like between your group, but make sure everyone gets a chance to solder!
 
@@ -159,11 +158,11 @@ Your switch should look like the image below.
 
 Take the header pins provided and slot them into the devboard as shown, make sure they are in the same position as shown in the picture. 
 
-![header](/2024-Autumn/images/header.JPG)
+![header](/2024-Autumn/images/header.jpg)
 
 Next place the devboard over the header pins. You can solder them together by placing the tip of your soldering iron against the pin, make sure it touches both the pin and the pad on the devboard. Now you can feed in a small amount of solder until you get a joint like the one shown in the picture. 
 
-![soldering-header](/2024-Autumn/images/soldering-header.JPG)
+![soldering-header](/2024-Autumn/images/soldering-header.jpg)
 
 <br>
 
