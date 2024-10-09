@@ -15,6 +15,7 @@ You will need a few new components to complete the chassis of your robot, so mak
 | Motor Brackets    | 2          |
 | Battery Holder    | 1          |
 | Breadboard Holder    | 1          |
+| USB A to USB C Cable   | 1          |
 
 <br>
 
