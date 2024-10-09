@@ -7,7 +7,7 @@ We use soldering to make permanent connections between components to create circ
 In this half of the session, we will be soldering all the electronics we need for the robot.
 
 ![all-components](/2024-Autumn/images/all-components.jpg)
-Kv
+
 * Sections labelled "**HOW TO**" explain certain techniques, and can be skipped if you are comfortable with the technique.
 
 * If you are going fast then you can do the sections labelled "**EXTRA**", otherwise they are fine to skip or leave until the end.
@@ -38,7 +38,7 @@ You can split up the work however you like between your group, but make sure eve
 
 ## Motors:
 
-In your bag there should be 2 motors, and 4 lengths of 10cm long wire. Each motor has 2 contacts that we need to connect wires to. Passing a current through the wires will then cause the motor to spin.
+In your bag there should be 2 motors, and you'll need to get 4 lengths of 10cm long wire from the end of the soldering benches. Each motor has 2 contacts that we need to connect wires to. Passing a current through the wires will then cause the motor to spin.
 
 ![motors-and-wire](/2024-Autumn/images/motors-and-wire.JPG)
 
