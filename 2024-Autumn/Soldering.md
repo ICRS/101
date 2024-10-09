@@ -182,4 +182,3 @@ Next place the devboard over the header pins. You can solder them together by pl
 ![motor-wired](/2024-Autumn/images/motor-wired.jpg)
 
 <br>
-
