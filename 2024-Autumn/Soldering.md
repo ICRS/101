@@ -15,7 +15,7 @@ In this half of the session, we will be soldering all the electronics we need fo
 | Header Pins  | 2           |
 | ESP32 Devboard  | 1           |
 
-You will also need 2 10 cm lengths of red wire and 2 10 cm lengths of black wire.
+You will also need 2 5 cm lengths of red wire and 2 5 cm lengths of black wire.
 
 ![all-components](/2024-Autumn/images/all-components.jpg)
 
