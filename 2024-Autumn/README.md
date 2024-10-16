@@ -17,4 +17,5 @@ Sessions will be split between 408/509 (lecture rooms) and 505 (lab).
     * [Assembly Instructions](/2024-Autumn/assembly-instructions.md)
 <br>
 
-* Session 3: Software (16th October)
+* Session 3: Software (16th October 4:00pm)
+    * [Software Presentation](/2024-Autumn/Robotics%20101%20software.pptx)
