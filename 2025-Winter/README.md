@@ -1,4 +1,4 @@
-# 2024 Robotics 101
+# 2025 Winter Robotics 101
 
 This year Robotics 101 will run for 4 weeks, with each week covering an important aspect of robotics.
 
