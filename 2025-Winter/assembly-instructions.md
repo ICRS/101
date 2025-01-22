@@ -81,9 +81,9 @@ You'll now need to add some wires to connect the motor driver and battery to the
 
 Connect the ground wire (the black one) to the negative strip of the breadboard and the positive wire (the red one) to the +12V input of the motor driver as shown. If you don't understand how a breadboard works then don't worry, it'll be explained in the other half of this session. Just follow along with the photos!
 
-![l298n](/2025-Winter/images/wiring_diagram.png)
+![l298n](/2025-Winter/Images/wiring_diagram.png)
 
-![power-connections](/2025-Winter/images/wiring_image.jpg)
+![power-connections](/2025-Winter/Images/wiring_image.jpg)
 
 **Task 9:** Connect the microcontroller power.
 
