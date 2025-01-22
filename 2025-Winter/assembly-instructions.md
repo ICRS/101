@@ -89,9 +89,6 @@ Connect the ground wire (the black one) to the negative strip of the breadboard 
 
 Connect the +5V of the motor driver to the VBUS pin of the microcontroller using a male to male jumper wire. Then connect the microcontroller ground (GND) to the negative strip of the breadboard.
 
-![s2-mini](/2024-Autumn/images/s2_mini.jpg)
-
-![power-connections-2](/2024-Autumn/images/power-connections-2.jpg)
 
 **Task 9:** Connect the microcontroller signal wires to the motor driver.
 
@@ -99,31 +96,27 @@ The order here does matter:
 
 | Motor pin | Microcontroller pin |
 |-|-|
-| Input1 | 39 |
-| Input2 | 37 |
-| Input3 | 35 |
-| Input4 | 33 |
+| Input1 | GPIO4 |
+| Input2 | GPIO3 |
+| Input3 | GPIO2 |
+| Input4 | GPIO1 |
 
 Make sure to use male to female jumper wires.
 
-![motor-connections](/2024-Autumn/images/motor-connections.jpg)
+
 
 
 **Task 10:** Check it works.
 
 You're almost done, the next step is to get a battery from a committee member and plug it into the robot.
 
-![battery](/2024-Autumn/images/battery-in.jpg)
-
 You can then check it works by turning it on with the switch from earlier and pressing the button labelled "0" on the microcontroller.
-
-![test](/2024-Autumn/images/test.jpg)
 
 If the wheels don't turn then check your connections and ask a committee member to help.
 
 ## You're Done!!!
 
-![assembled](/2024-Autumn/images/assembled.jpg)
+
 
 <br>
 
