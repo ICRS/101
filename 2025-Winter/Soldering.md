@@ -170,11 +170,13 @@ Your switch should look like the image below.
 
 **Task 7:** Solder the header pins onto the devboard.
 
-Take the header pins provided and slot them into the devboard as shown, make sure they are in the same position as shown in the picture. 
+Take the header pins provided and slot them into the devboard as shown, make sure they are in the same position as shown in the picture.
 
 ![header](/2024-Autumn/images/header.jpg)
 
 Next place the devboard over the header pins. You can solder them together by placing the tip of your soldering iron against the pin, make sure it touches both the pin and the pad on the devboard. Now you can feed in a small amount of solder until you get a joint like the one shown in the picture. 
+
+Note: Your ESP32 is a slightly different board, but the principle is the same.
 
 ![soldering-header](/2024-Autumn/images/soldering-header.jpg)
 
