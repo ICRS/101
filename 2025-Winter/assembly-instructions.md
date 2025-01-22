@@ -4,7 +4,8 @@ You will need a few new components to complete the chassis of your robot, so mak
 
 | Component   | Quantity    |
 | ----------- | ----------- |
-| M3 x 8mm    | 14          |
+| M3 x 8mm    | 12          |
+| M3 x 16mm   | 2           |
 | M3 Hex Nuts | 4           |
 | M3 Spacers  | 2           |
 | Chassis     | 1           |
@@ -49,7 +50,7 @@ Align the two 3D printed washers with the requisite holes.
 
 ![washers](/2024-Autumn/images/washers.jpg)
 
-Next fit two screws in the holes adjacent to the heatsink on the motor driver. Align this with the washers and lower it into place. Secure it in place by using two nuts on the opposite side. Ensure the heatsink is nearest the end of the robot. 
+Next fit two screws (use the 16 mm screws here) in the holes adjacent to the heatsink on the motor driver. Align this with the washers and lower it into place. Secure it in place by using two nuts on the opposite side. Ensure the heatsink is nearest the end of the robot. 
 
 ![motor-driver](/2024-Autumn/images/motor-driver.jpg)
 
@@ -80,9 +81,9 @@ You'll now need to add some wires to connect the motor driver and battery to the
 
 Connect the ground wire (the black one) to the negative strip of the breadboard and the positive wire (the red one) to the +12V input of the motor driver as shown. If you don't understand how a breadboard works then don't worry, it'll be explained in the other half of this session. Just follow along with the photos!
 
-![l298n](/2024-Autumn/images/L298N-label.webp)
+![l298n](/2025-Winter/images/wiring_diagram.png)
 
-![power-connections](/2024-Autumn/images/power-connections.jpg)
+![power-connections](/2025-Winter/images/wiring_image.jpg)
 
 **Task 9:** Connect the microcontroller power.
 
