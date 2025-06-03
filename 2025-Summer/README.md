@@ -121,25 +121,45 @@ If the wheels don't turn then check your connections and ask a committee member 
 <br>
 
 ## Coding
-**Task 1** Open Arduino IDE
+**Task 1** Open Arduino IDE.
 
-**Task 2** Open the MotorControl Example Script
+**Task 2** Open the MotorControl example script.
 
-**Task 3** Flash the robot
+![example-code-location](/2025-Summer/Images/example_location.PNG)
 
-Plug the microcontroller into the laptop using the usb cable
 
-**Task 4** Modify the motor pins definitions
+**Task 3** Flash the robot.
+
+Plug the microcontroller into the laptop using the usb cable.
+
+Select your microcontroller. It is the XIAO ESP32 C3.
+![board-select](/2025-Summer/Images/board-select.png)
+
+Flash the code onto the microcontroller by pressing the button below.
+![flash](/2025-Summer/Images/flash.png)
+
+
+**Task 4** Modify the motor pins definitions.
 
 Modify the motor pin definitions so that it drives forwards, turns left, turns right and then goes backwards.
 
+![modify-pins](/2025-Summer/Images/modify_pins.png)
+
+Reflash the code confirm it is working as expected.
+
 **Task 6** Dabble
 
-Open up the dabble script from the library and change the pin assignments to what was found in step 4.
+Open up the dabble script from the examples page just like in task 2 and change the pin assignments to what you found in step 4.
+
 Change the name of the robot in the code.
 
-**Task 7** Download the dabble app on your phone
+![dabble](/2025-Summer/Images/dabble.png)
+
+**Task 7** Download the dabble app on your phone.
 
 **Task 8** Flash the dabble code.
 
-**Task 9** Connect to th
+Flash the dabble code like in.
+
+**Task 9** Control the rover.
+Use the dabble app to connect to the rover via bluetooth and practice driving it around.
