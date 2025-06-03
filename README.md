@@ -7,9 +7,10 @@ It is an annual event run buy Imperial College Robotics Society (ICRS) to teach 
 
 ### Versions
 Latest version:
-* [Winter 2025](2025-Winter/README.md)
+*[Summer 2025](2025-Summer/README.md)
 
 Archived versions:
+* [Winter 2025](2025-Winter/README.md)
 * [Autumn 2024](2024-Autumn/README.md)
 * [Winter 2024](2024-Winter/README.md)
 * [2023](2023/README.md)
