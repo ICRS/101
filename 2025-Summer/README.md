@@ -11,7 +11,7 @@ You will need a few components to complete the chassis of your robot, so make su
 | M3 x 8mm    | 12          |
 | M3 x 16mm   | 4           |
 | M3 Hex Nuts | 4           |
-| M3 Spacers  | 2           |
+| M3 Spacers  | 4           |
 | Chassis     | 1           |
 | Breadboard  | 1           |
 | Wheels      | 2           |
