@@ -4,12 +4,12 @@
 ## Assembly
 ### Part 1: Assembly
 
-You will need a few new components to complete the chassis of your robot, so make sure you collect the components in the table below either at the start, or as you progress through the tasks.
+You will need a few components to complete the chassis of your robot, so make sure you collect the components in the table below either at the start.
 
 | Component   | Quantity    |
 | ----------- | ----------- |
 | M3 x 8mm    | 12          |
-| M3 x 16mm   | 2           |
+| M3 x 16mm   | 4           |
 | M3 Hex Nuts | 4           |
 | M3 Spacers  | 2           |
 | Chassis     | 1           |
@@ -21,6 +21,9 @@ You will need a few new components to complete the chassis of your robot, so mak
 | Battery Holder    | 1          |
 | Breadboard Holder    | 1          |
 | USB A to USB C Cable   | 1          |
+| ESP | 1 |
+| Motor Driver | 1 |
+| Motors | 2 |
 
 <br>
 
@@ -30,7 +33,7 @@ You will need a few new components to complete the chassis of your robot, so mak
 
 <br>
 
-**Task 1:** Place the breadboard in the breadboard holder and attach it to the chassis using two screws. Note that the holes in the 3D printed parts are designed to be tight. 
+**Task 1:** Place the breadboard in the breadboard holder and attach it to the chassis using two 8mm screws. Note that the holes in the 3D printed parts are designed to be tight. 
 
 ![breadboard](/2024-Autumn/images/breadboard.jpg)
 
@@ -48,26 +51,25 @@ You will need a few new components to complete the chassis of your robot, so mak
 
 <br>
 
-**Task 4:** For this step you DO NOT need to unwire your motors and motor driver. 
+**Task 4:** For this step you DO NOT need to unwire your motors and motor driver.
 
-Align the two 3D printed washers with the requisite holes. 
+Align the two 3D printed washers with the requisite holes.
 
 ![washers](/2024-Autumn/images/washers.jpg)
 
-Next fit two screws (use the 16 mm screws here) in the holes adjacent to the heatsink on the motor driver. Align this with the washers and lower it into place. Secure it in place by using two nuts on the opposite side. Ensure the heatsink is nearest the end of the robot. 
+Next fit four screws (use the 16 mm screws here) in the holes adjacent to the heatsink on the motor driver. Align this with the washers and lower it into place. Secure it in place by using two nuts on the opposite side. Ensure the heatsink is nearest the end of the robot.
 
 ![motor-driver](/2024-Autumn/images/motor-driver.jpg)
 
 <br>
 
-**Task 5:** Fit the motor brackets over the motors and secure these to the chassis using two screws for each. Ensure they are mounted to the top side of the chassis. Note that the screws should go through the bottom of the chassis.  
+**Task 5:** Fit the motor brackets over the motors and secure these to the chassis using two screws for each. Ensure they are mounted to the top side of the chassis. Note that the screws should go through the bottom of the chassis.
 
 ![mounted-motor](/2024-Autumn/images/mounted-motor.jpg)
 
 <br>
 
-
-**Task 6:** Slide the shaft adapters over the motor shafts. Then attach the wheels to the shaft adapters. Note that this requires some force, be careful not to damage any parts of the robot. 
+**Task 6:** Slide the shaft adapters over the motor shafts. Then attach the wheels to the shaft adapters. Note that this requires some force, be careful not to damage any parts of the robot.
 
 ![shaft-adapter](/2024-Autumn/images/shaft-adapter.jpg)
 
@@ -93,7 +95,6 @@ Connect the ground wire (the black one) to the negative strip of the breadboard 
 
 Connect the +5V of the motor driver to the VBUS pin of the microcontroller using a male to male jumper wire. Then connect the microcontroller ground (GND) to the negative strip of the breadboard.
 
-
 **Task 9:** Connect the microcontroller signal wires to the motor driver.
 
 The order here does matter:
@@ -107,9 +108,6 @@ The order here does matter:
 
 Make sure to use male to female jumper wires.
 
-
-
-
 **Task 10:** Check it works.
 
 You're almost done, the next step is to get a battery from a committee member and plug it into the robot.
@@ -121,45 +119,47 @@ If the wheels don't turn then check your connections and ask a committee member 
 <br>
 
 ## Coding
-**Task 1** Open Arduino IDE.
 
-**Task 2** Open the MotorControl example script.
+**Task 1** Open Arduino IDE
 
-![example-code-location](/2025-Summer/Images/example_location.PNG)
+**Task 2** Open the MotorControl Example Script
 
+Goto Files -> Examples -> ICRS 101 -> MotorControl
+![location](/2025-Summer/Images/location.png)
 
-**Task 3** Flash the robot.
+**Task 3** Flash the robot
 
 Plug the microcontroller into the laptop using the usb cable.
 
-Select your microcontroller. It is the XIAO ESP32 C3.
-![board-select](/2025-Summer/Images/board-select.png)
+Select the XIAO_ESP32C3 as shown below
+![select-board](/2025-Summer/Images/select-board.png)
 
-Flash the code onto the microcontroller by pressing the button below.
+Then press this button to flash
 ![flash](/2025-Summer/Images/flash.png)
 
+**Task 4** Modify the motor pins definitions
+In the MotorControl code modify the pins so that the rover drives forwards, turns left, turns right and then goes backwards.
 
-**Task 4** Modify the motor pins definitions.
+Swap the pin definitions around (e.g. swap 3 & 4) to get the wheel to spin the other way.
 
-Modify the motor pin definitions so that it drives forwards, turns left, turns right and then goes backwards.
+![pin-def](/2025-Summer/Images/pin-def.png)
 
-![modify-pins](/2025-Summer/Images/modify_pins.png)
+Remember the correct motor pin configuration as it is needed for the next step.
 
-Reflash the code confirm it is working as expected.
+**Task 5** Flash robot with robot code
+Open the robot code from the same example menu where the MotorControl code was found as in step 2.
 
-**Task 6** Dabble
+Open the serial monitor (ctrl + shift + m).
 
-Open up the dabble script from the examples page just like in task 2 and change the pin assignments to what you found in step 4.
+Flash the robot code and you will see a mac address output in the serial monitor window. It should be a string of 12 letters and numbers.
 
-Change the name of the robot in the code.
+Take a note of this as this is needed for the next step.
 
-![dabble](/2025-Summer/Images/dabble.png)
+**Task 6** Flash the controller
+Modify the broadcastAddress[] in the controller code.
+Take the mac address you found in the previous step and copy it across splitting it up into pairs to put into the broadcastAddress[]
+![controller](/2025-Summer/Images/controller.png)
 
-**Task 7** Download the dabble app on your phone.
+Then flash the code as before to the controller.
 
-**Task 8** Flash the dabble code.
-
-Flash the dabble code like in.
-
-**Task 9** Control the rover.
-Use the dabble app to connect to the rover via bluetooth and practice driving it around.
+**Task 7** You should now be able to drive the rover around using the controller
