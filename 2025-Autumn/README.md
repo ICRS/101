@@ -13,6 +13,7 @@ Sessions will be split between 408/509 (lecture rooms) and 505 (lab), and will l
 
 * Session 2: Electrical (22nd October 4:00pm)
     * [Soldering Instructions](/2025-Autumn/Soldering.md)
+    * [Wiring Instructions](/2025-Autumn/wiring-instructions.md)
 <br>
 
 * Session 3: Software (29th October 4:00pm)
