@@ -16,7 +16,5 @@ Sessions will be split between 408/509 (lecture rooms) and 505 (lab), and will l
     * [Wiring Instructions](/2025-Autumn/wiring-instructions.md)
 <br>
 
-* Session 3: Software (29th October 4:00pm)
+* Session 3: Software & Competition (29th October 4:00pm)
     * [Software Presentation](/2025-Autumn/Robotics%20101%20software.pptx)
-
-* Session 4: Competition (5th February 4:00pm)
