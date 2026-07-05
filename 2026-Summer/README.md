@@ -26,33 +26,35 @@ You will need a few components to complete the chassis of your robot. They shoul
 
 <br>
 
-**Task 0:** 
+### **Task 0:** 
 Check you have all the neccissary compoents inside of your kit.
 
 ![all-components-2](/2026-Summer/Images/Parts.png)
 
 <br>
 
-**Task 1:** 
+### **Task 1:** 
 Find the motors, the motor cables (Black twisted wires) and the big red motor driver. Connect the cables into the motors. Place the other ends of the motor cables into the blue terminals on the motor driver and screw down to attach them. Give a gentle pull on the cables to confirm they are attached. 
 
 ![attch to MD 1](/2026-Summer/Images/Attach_motors.png)
 
 <br>
 
-**Task 2:** Using the same method with the blue terminals, attach the red wire of the battery connector into the terminal on the left.
+### **Task 2:** Using the same method with the blue terminals, attach the red wire of the battery connector into the terminal on the left.
 
 ![attach to MD 2](/2026-Summer/Images/Attach_battery.png)
 
 <br>
 
-**Task 3:** Get the 2 male to male jumper wires. In the middle of the blue terminls attach the black wire from the battery connector along with one of the male to male jumper wires. In the right terminal connect the remaining jumper wire and screw them to attach. Give both a gently pull to check they are connected securely. TOP TIP: The black wire and jumper terminal can be tricky to attach securely so it may help to twist the black wire around the jumper wire then screw them in to the terminal
+### **Task 3:** 
+Get the 2 male to male jumper wires. In the middle of the blue terminls attach the black wire from the battery connector along with one of the male to male jumper wires. In the right terminal connect the remaining jumper wire and screw them to attach. Give both a gently pull to check they are connected securely. TOP TIP: The black wire and jumper terminal can be tricky to attach securely so it may help to twist the black wire around the jumper wire then screw them in to the terminal
 
 ![attach to MD 3](/2026-Summer/Images/Attach_jumpers.png)
 
 <br>
 
-**Task 4:** Using the sticky tape on the bottom of the motor driver, stick it down onto the acrylic chasis. There should be an engraved square to help with its placement.
+### **Task 4:** 
+Using the sticky tape on the bottom of the motor driver, stick it down onto the acrylic chasis. There should be an engraved square to help with its placement.
 
 ![attach MD to chassis](/2026-Summer/Images/palce_MD.png)
 
@@ -67,7 +69,8 @@ Stick the breadboard into the engraved square on the top side of the acrylic cha
 <br>
 
 
-**Task 5:** Connect the battery wires.
+### **Task 5:** 
+Connect the battery wires.
 
 Connect the ground wire (the black one) to the negative strip of the breadboard and the positive wire (the red one) to the +12V input of the motor driver as shown. If you don't understand how a breadboard works then don't worry, it'll be explained in the other half of this session. Just follow along with the photos!
 
@@ -75,11 +78,13 @@ Connect the ground wire (the black one) to the negative strip of the breadboard 
 
 ![wire](/2026-Summer/Images/Wires.png)
 
-**Task 6:** Connect the microcontroller power.
+### **Task 6:** 
+Connect the microcontroller power.
 
 Connect the +5V of the motor driver to the VBUS pin of the microcontroller using a male to male jumper wire. Then connect the microcontroller ground (GND) to the negative strip of the breadboard.
 
-**Task 7:** Connect the microcontroller signal wires to the motor driver.
+### **Task 7:** 
+Connect the microcontroller signal wires to the motor driver.
 
 The order here does matter:
 
@@ -95,13 +100,14 @@ Make sure to use male to female jumper wires.
 
 You'll now need to add some wires to connect the motor driver and battery to the microcontroller.
 
-**Task 8:** 
+### **Task 8:** 
 
 Stick the battery hloder and the ball wheel onto the base of the chasis using the sticky tape. The battery holder should have its open edge in line with the back edge.
 
 ![attach Ball ](/2026-Summer/Images/Add_ball.png)
 
-**Task 10:** Check it works.
+### **Task 9:** 
+Check it works.
 
 You're almost done, the next step is to get a battery and plug it into the robot.
 
@@ -115,14 +121,17 @@ If the wheels don't turn then check your connections and ask a committee member 
 
 ## Coding
 
-**Task 1** Open Arduino IDE
+### **Task 1** 
+Open Arduino IDE
 
-**Task 2** Open the MotorControl Example Script
+### **Task 2** 
+Open the MotorControl Example Script
 
 Goto Files -> Examples -> ICRS 101 -> MotorControl
 ![location](/2025-Summer/Images/location.png)
 
-**Task 3** Flash the robot
+### **Task 3** 
+Flash the robot
 
 Plug the microcontroller into the laptop using the usb cable.
 
@@ -132,7 +141,8 @@ Select the XIAO_ESP32C3 as shown below
 Then press this button to flash
 ![flash](/2025-Summer/Images/flash.png)
 
-**Task 4** Modify the motor pins definitions
+### **Task 4** 
+Modify the motor pins definitions
 In the MotorControl code modify the pins so that the rover drives forwards, turns left, turns right and then goes backwards.
 
 Swap the pin definitions around (e.g. swap 3 & 4) to get the wheel to spin the other way.
@@ -141,20 +151,27 @@ Swap the pin definitions around (e.g. swap 3 & 4) to get the wheel to spin the o
 
 Remember the correct motor pin configuration as it is needed for the next step.
 
-**Task 5** Flash robot with robot code
-Open the robot code from the same example menu where the MotorControl code was found as in step 2.
 
-Open the serial monitor (ctrl + shift + m).
+### **Task 5**
+Download the Dabble- Bluetooth Controller app it can be found by scanning this qr code with your phone and folowing either the App Store or Play store buttons.
 
-Flash the robot code and you will see a mac address output in the serial monitor window. It should be a string of 12 letters and numbers.
+![Dabble QR](/2026-Summer/Images/adobe-express-qr-code.png)
 
-Take a note of this as this is needed for the next step.
+### **Task 6** 
+Open the Dabble code from the same example menu where the MotorControl code was found as in step 2.
 
-**Task 6** Flash the controller
-Modify the broadcastAddress[] in the controller code.
-Take the mac address you found in the previous step and copy it across splitting it up into pairs to put into the broadcastAddress[]
-![controller](/2025-Summer/Images/controller.png)
+Update the motor pins as was done in the previous task and give it a unique bluetooth name.
+![Code](/2026-Summer/Images/Code.png)
 
-Then flash the code as before to the controller.
 
-**Task 7** You should now be able to drive the rover around using the controller
+### **Task 7** 
+Flash the Rover as was done in task 3. Once the code has been flashed, the white cable conecting the computer to the rover can be removed. You will now be using the switch to turn the rover on and off.
+
+
+### **Task 8** 
+With the switch turned on, open the dabble app on your phone. Click the Gamepad square, then click the top right plug symbol. Find your chosen bluetooth name and click it to connect. You should now have a remote controlled robot! If the rover does not move in the direction you think it should revisit **Task4** reconnecting to the robot with the cable whenever you want to re-flash the code.
+
+![Code](/2026-Summer/Images/App.png)
+
+# What Is Next?
+... Race time. Now is your opportunity to get creative, decorate your robot and practice driving it around. At the end of the day we will do a race and crown the champions of the ICRS Grand Prix!
