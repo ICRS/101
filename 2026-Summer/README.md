@@ -4,26 +4,23 @@
 ## Assembly
 ### Part 1: Assembly
 
-You will need a few components to complete the chassis of your robot, so make sure you collect the components in the table below either at the start.
+You will need a few components to complete the chassis of your robot. They should be within your kit however, if you are missing any items please let one of the ICRS people know.
 
 | Component   | Quantity    |
 | ----------- | ----------- |
-| M3 x 8mm    | 12          |
-| M3 x 16mm   | 4           |
-| M3 Hex Nuts | 4           |
-| M3 Spacers  | 4           |
+| M3 Screw    | 4           |
 | Chassis     | 1           |
 | Breadboard  | 1           |
 | Wheels      | 2           |
-| Shaft adaptors | 2        |
+| O-rings      | 2           |
 | Ball wheel  | 1           |
 | Motor Brackets    | 2          |
 | Battery Holder    | 1          |
-| Breadboard Holder    | 1          |
 | USB A to USB C Cable   | 1          |
 | ESP | 1 |
 | Motor Driver | 1 |
 | Motors | 2 |
+| Motor Cables   | 2      |
 
 <br>
 
