@@ -1,4 +1,4 @@
-# 2025 Summer Robotics 101
+# 2026 Summer Robotics 101
 
 
 ## Assembly
