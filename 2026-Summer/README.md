@@ -26,41 +26,43 @@ You will need a few components to complete the chassis of your robot. They shoul
 
 <br>
 
-**Task 0:** Check you have all the neccissary compoents inside of your kit.
+**Task 0:** 
+Check you have all the neccissary compoents inside of your kit.
 
-![all-components-2](/2024-Autumn/images/all-components-2.jpg)
+![all-components-2](/2026-Summer/Images/Parts.png)
 
 <br>
 
-**Task 1:** Find the motors, the motor cables (Black twisted wires) and the big red motor driver. Connect the cables into the motors. Place the other ends of the motor cables into the blue terminals on the motor driver and screw down to attach them. Give a gentle pull on the cables to confirm they are attached. 
+**Task 1:** 
+Find the motors, the motor cables (Black twisted wires) and the big red motor driver. Connect the cables into the motors. Place the other ends of the motor cables into the blue terminals on the motor driver and screw down to attach them. Give a gentle pull on the cables to confirm they are attached. 
 
-![breadboard](/2024-Autumn/images/breadboard.jpg)
+![attch to MD 1](/2026-Summer/Images/Attach_motors.png)
 
 <br>
 
 **Task 2:** Using the same method with the blue terminals, attach the red wire of the battery connector into the terminal on the left.
 
-![ball-wheel](/2024-Autumn/images/ball-wheel.jpg)
+![attach to MD 2](/2026-Summer/Images/Attach_battery.png)
 
 <br>
 
 **Task 3:** Get the 2 male to male jumper wires. In the middle of the blue terminls attach the black wire from the battery connector along with one of the male to male jumper wires. In the right terminal connect the remaining jumper wire and screw them to attach. Give both a gently pull to check they are connected securely. TOP TIP: The black wire and jumper terminal can be tricky to attach securely so it may help to twist the black wire around the jumper wire then screw them in to the terminal
 
-![battery-holder](/2024-Autumn/images/battery-holder.jpg)
+![attach to MD 3](/2026-Summer/Images/Attach_jumpers.png)
 
 <br>
 
 **Task 4:** Using the sticky tape on the bottom of the motor driver, stick it down onto the acrylic chasis. There should be an engraved square to help with its placement.
 
-![washers](/2024-Autumn/images/washers.jpg)
+![attach MD to chassis](/2026-Summer/Images/palce_MD.png)
 
 Next find the 2 motor brackets and the 4 m3 screws. Put the motor on the top and place the bracket over the top abd from below screw the screws into the holes in the motor brackets, this should securely fasten the motors to the acrylic chasis. Repeate for both motors.
 
-![motor-driver](/2024-Autumn/images/motor-driver.jpg)
+![attach motors](/2026-Summer/Images/Screw_motors.png)
 
 Stick the breadboard into the engraved square on the top side of the acrylic chasis and place the ESP32 computer so that the 2 rows of legs are either side of the channel down the middle of the breadboard.
 
-![motor-driver](/2024-Autumn/images/motor-driver.jpg)
+![attach breadboard](/2026-Summer/Images/Attach_Bread.png)
 
 <br>
 
@@ -71,7 +73,7 @@ Connect the ground wire (the black one) to the negative strip of the breadboard 
 
 ![l298n](/2025-Winter/Images/wiring_diagram.png)
 
-![power-connections](/2025-Winter/Images/wiring_image.jpg)
+![wire](/2026-Summer/Images/Wires.png)
 
 **Task 6:** Connect the microcontroller power.
 
@@ -91,16 +93,13 @@ The order here does matter:
 Make sure to use male to female jumper wires.
 
 
-![9v-battery](/2024-Autumn/images/9v-battery.jpg)
-
-
 You'll now need to add some wires to connect the motor driver and battery to the microcontroller.
 
-**Task 8:** C
+**Task 8:** 
 
 Stick the battery hloder and the ball wheel onto the base of the chasis using the sticky tape. The battery holder should have its open edge in line with the back edge.
 
-![9v-battery](/2024-Autumn/images/9v-battery.jpg)
+![attach Ball ](/2026-Summer/Images/Add_ball.png)
 
 **Task 10:** Check it works.
 
@@ -109,6 +108,8 @@ You're almost done, the next step is to get a battery and plug it into the robot
 You can then check it works by turning it on with the switch from earlier
 
 If the wheels don't turn then check your connections and ask a committee member to help.
+
+![attach to MD 2](/2026-Summer/Images/Batt.png)
 
 <br>
 
