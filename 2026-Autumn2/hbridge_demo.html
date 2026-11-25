@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!-- H-bridge + DC motor demo with a live circuit simulation. Open in any browser. -->
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>H-bridge and DC motor demo</title>
+<style>
+:root{--fg:#1a1a1a;--fg2:#5f5e5a;--fg3:#888780;--bg:#fff;--card:#f1efe8;--line:#b4b2a9;--cur:#185FA5;--on:#0F6E56;--onbg:#E1F5EE;--dio:#854F0B;--bad:#A32D2D;--badbg:#FCEBEB;--v:#993C1D;color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--fg:#eee;--fg2:#b4b2a9;--fg3:#888780;--bg:#1c1c1c;--card:#2a2a28;--line:#5f5e5a;--cur:#85B7EB;--on:#5DCAA5;--onbg:#085041;--dio:#EF9F27;--bad:#F09595;--badbg:#501313;--v:#F0997B}}
+body{margin:20px auto;max-width:960px;padding:0 16px;font-family:system-ui,sans-serif;color:var(--fg);background:var(--bg)}
+h1{font-size:20px;font-weight:500;margin:0 0 10px}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:8px;font-size:13px}
+.bar label,.bar .l{color:var(--fg2)}
+button,select{font-size:13px;padding:4px 10px}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace}
+.grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:16px;align-items:start}
+svg{width:100%;height:auto;display:block}
+svg text{font-family:system-ui,sans-serif}
+.sw{cursor:pointer}
+.flow{stroke-dasharray:7 9;animation:f .5s linear infinite}
+.flow.rev{animation-direction:reverse}
+@keyframes f{to{stroke-dashoffset:-16}}
+.desc{background:var(--card);border-radius:8px;padding:10px 14px;font-size:13px;line-height:1.6;margin:0 0 10px}
+.desc b{font-weight:500}
+.desc.bad{background:var(--badbg);color:var(--bad)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.stat{background:var(--card);border-radius:8px;padding:6px 10px}
+.stat span{display:block;font-size:11px;color:var(--fg2)}
+.stat b{font-size:15px;font-weight:500;font-family:ui-monospace,Menlo,Consolas,monospace}
+.pwm{border:0.5px solid var(--line);border-radius:8px;padding:8px 12px;margin-bottom:10px}
+canvas{width:100%;display:block}
+.cap{font-size:12px;color:var(--fg3);margin:2px 0 8px}
+</style></head><body>
+<h1>H-bridge driving a DC motor</h1>
+
+<div class="bar">
+  <span class="l">Presets:</span>
+  <button data-p="1001">Forward</button>
+  <button data-p="0110">Reverse</button>
+  <button data-p="0000">Coast</button>
+  <button data-p="0101">Brake (low side)</button>
+  <button data-p="1010">Brake (high side)</button>
+  <button data-p="1100">Shoot-through</button>
+  <span class="l" style="margin-left:auto">Time</span>
+  <select id="ts"><option value="1">real time</option><option value="0.1">0.1× slow</option><option value="0.01">0.01× slow</option><option value="0.001">0.001× slow</option></select>
+</div>
+
+<div class="grid">
+  <div>
+    <svg id="sch" viewBox="0 0 640 420" role="img" aria-label="H-bridge schematic with four switches, body diodes and a motor"></svg>
+    <div class="cap">Click a switch to toggle it. Blue moving dashes show where current flows; amber means a body diode is conducting.</div>
+  </div>
+  <div>
+    <div id="desc" class="desc"></div>
+    <div class="stats">
+      <div class="stat"><span>Motor current</span><b id="sI">0</b></div>
+      <div class="stat"><span>Motor voltage</span><b id="sV">0</b></div>
+      <div class="stat"><span>Speed</span><b id="sW">0</b></div>
+    </div>
+    <div class="pwm">
+      <div class="bar" style="margin-bottom:6px"><label><input type="checkbox" id="pwmOn"> PWM speed control</label>
+        <select id="pdir"><option value="f">forward</option><option value="r">reverse</option></select>
+        <select id="pdec"><option value="slow">off-time: brake (slow decay)</option><option value="fast">off-time: all off (fast decay)</option></select></div>
+      <div class="bar" style="margin-bottom:6px"><label for="duty" style="min-width:60px">Duty</label><input type="range" id="duty" min="0" max="100" value="50" step="1" style="flex:1"><span id="dutyv" class="mono" style="min-width:40px">50%</span></div>
+      <div class="bar" style="margin-bottom:0"><label for="freq" style="min-width:60px">Frequency</label><input type="range" id="freq" min="0" max="100" value="50" step="1" style="flex:1"><span id="freqv" class="mono" style="min-width:60px">2 kHz</span></div>
+    </div>
+    <canvas id="scope" height="150"></canvas>
+    <div class="cap" id="scap">Scope: motor voltage (orange) and current (blue)</div>
+    <canvas id="spd" height="90"></canvas>
+    <div class="cap">Speed over the last 4 s of real time</div>
+  </div>
+</div>
+<div class="cap">Model: 12 V supply, motor R = 1 Ω, L = 1 mH, K<sub>e</sub> = K<sub>t</sub> = 0.02 V·s/rad, rotor inertia 1×10⁻⁴ kg·m², body diode drop 0.7 V. The rotor drawing turns at 1/100 of its real speed so you can see it.</div>
+
+<script>
+const $=id=>document.getElementById(id), NS='http://www.w3.org/2000/svg';
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const VS=12,R=1,L=1e-3,K=0.02,J=1e-4,B=2e-6,VD=0.7,DT=1e-6;
+let q=[0,0,0,0];            // Q1 high-left, Q2 low-left, Q3 high-right, Q4 low-right
+let i=0,w=0,th=0,t=0,vab=0,fault=false;
+let scopeBuf=[],spdBuf=[];
+
+// ---------- circuit simulation ----------
+function nodeV(hi,lo,out){ // out = sign of current leaving the node into the motor
+  if(hi&&lo)return NaN;
+  if(hi)return VS; if(lo)return 0;
+  if(out>0)return -VD;      // must be fed from ground through the low-side diode
+  if(out<0)return VS+VD;    // must escape to the supply through the high-side diode
+  return null;
+}
+function pwmState(){
+  const on=((t*PF)%1)<PD;
+  if(on)return PFWD?[1,0,0,1]:[0,1,1,0];
+  return PSLOW?[0,1,0,1]:[0,0,0,0];
+}
+function simStep(){
+  if($('pwmOn').checked)q=pwmState();
+  fault=(q[0]&&q[1])||(q[2]&&q[3]);
+  if(fault){i=0;}
+  else{
+    const floating=(!q[0]&&!q[1])||(!q[2]&&!q[3]);
+    if(i===0&&floating){
+      const emf=K*w;
+      const dp=(nodeV(q[0],q[1],1)-nodeV(q[2],q[3],-1)-emf)/L;
+      const dn=(nodeV(q[0],q[1],-1)-nodeV(q[2],q[3],1)-emf)/L;
+      if(dp>0){i=dp*DT;vab=nodeV(q[0],q[1],1)-nodeV(q[2],q[3],-1);}
+      else if(dn<0){i=dn*DT;vab=nodeV(q[0],q[1],-1)-nodeV(q[2],q[3],1);}
+      else vab=emf;
+    }else{
+      const s=Math.sign(i)||1,VA=nodeV(q[0],q[1],s),VB=nodeV(q[2],q[3],-s);
+      vab=VA-VB;
+      const ni=i+(vab-R*i-K*w)/L*DT;
+      i=(floating&&Math.sign(ni)!==Math.sign(i))?0:ni;
+    }
+  }
+  w+=(K*i-B*w)/J*DT; th+=w*DT; t+=DT;
+}
+const freq=()=>Math.round(100*Math.pow(200,+$('freq').value/100)); // 100 Hz .. 20 kHz
+let PF=1000,PD=0.5,PFWD=true,PSLOW=true;
+function cachePWM(){PF=freq();PD=duty();PFWD=$('pdir').value=='f';PSLOW=$('pdec').value=='slow';}
+const duty=()=>+$('duty').value/100;
+
+// ---------- schematic ----------
+const XL=210,XR=470,YT=50,YB=380,YM=215,XBAT=60;
+const legs=[ // id, x, y1, y2, diode x offset
+  {k:0,name:'Q1',d:'D1',x:XL,y1:YT,y2:YM,dx:-55},{k:1,name:'Q2',d:'D2',x:XL,y1:YM,y2:YB,dx:-55},
+  {k:2,name:'Q3',d:'D3',x:XR,y1:YT,y2:YM,dx:55},{k:3,name:'Q4',d:'D4',x:XR,y1:YM,y2:YB,dx:55}];
+function el(tag,a,txt){const e=document.createElementNS(NS,tag);for(const k in a)e.setAttribute(k,a[k]);if(txt!==undefined)e.textContent=txt;return e;}
+function pl(svg,pts,col,w,cls){svg.appendChild(el('polyline',{points:pts.map(p=>p.join(',')).join(' '),fill:'none',stroke:col,'stroke-width':w,'stroke-linejoin':'round',class:cls||''}));}
+
+function conduction(){
+  // downward-positive current in each leg element, and whether it is the switch or diode
+  const s=Math.abs(i)<1e-4?0:Math.sign(i), res=[];
+  const dirs=[s,-s,-s,s];
+  for(let k=0;k<4;k++){
+    const partner=k^1;
+    let by=null;
+    if(s!==0&&!fault){
+      if(q[k])by='sw';
+      else if(!q[partner]&&dirs[k]<0)by='d';   // body diodes only conduct upwards
+    }
+    res.push({by,d:by?dirs[k]:0});
+  }
+  return {s,res};
+}
+
+function draw(){
+  const svg=$('sch');svg.innerHTML='';
+  const ln=css('--line'),cur=css('--cur'),fg=css('--fg'),fg2=css('--fg2'),dio=css('--dio'),bad=css('--bad'),on=css('--on'),onbg=css('--onbg'),bg=css('--bg');
+  const {s,res}=conduction();
+  const flowCol=fault?bad:cur;
+  // base wiring
+  pl(svg,[[XBAT,YT+60],[XBAT,YT],[XR,YT]],ln,2);pl(svg,[[XBAT,YB-60],[XBAT,YB],[XR,YB]],ln,2);
+  legs.forEach(g=>{pl(svg,[[g.x,g.y1],[g.x,g.y2]],ln,2);
+    const a=g.y1+28,b=g.y2-28;pl(svg,[[g.x,a],[g.x+g.dx,a],[g.x+g.dx,b],[g.x,b]],ln,1.5);});
+  pl(svg,[[XL,YM],[XR,YM]],ln,2);
+  // flowing current overlays
+  const flow=(pts,dir,col)=>{if(!dir)return;pl(svg,pts,col,4,'flow'+(dir<0?' rev':''));};
+  if(fault){
+    [[0,1],[2,3]].forEach(([h,l])=>{if(q[h]&&q[l]){const x=legs[h].x;flow([[XBAT,YT+60],[XBAT,YT],[x,YT],[x,YB],[XBAT,YB],[XBAT,YB-60]],1,bad);}});
+  }else{
+    res.forEach((r,k)=>{if(!r.by)return;const g=legs[k];
+      const pts=r.by==='sw'?[[g.x,g.y1],[g.x,g.y2]]:[[g.x,g.y1],[g.x,g.y1+28],[g.x+g.dx,g.y1+28],[g.x+g.dx,g.y2-28],[g.x,g.y2-28],[g.x,g.y2]];
+      flow(pts,r.d,r.by==='d'?dio:cur);});
+    flow([[XL,YM],[XR,YM]],s,cur);
+    const topMid=res[2].d, topLeft=res[0].d+res[2].d, botMid=res[3].d, botLeft=res[1].d+res[3].d;
+    flow([[XL,YT],[XR,YT]],topMid,cur); flow([[XBAT,YT],[XL,YT]],Math.sign(topLeft),cur);
+    flow([[XR,YB],[XL,YB]],botMid,cur); flow([[XL,YB],[XBAT,YB]],Math.sign(botLeft),cur);
+    if(topLeft){flow([[XBAT,YT+60],[XBAT,YT]],Math.sign(topLeft),cur);flow([[XBAT,YB],[XBAT,YB-60]],Math.sign(topLeft),cur);}
+  }
+  // battery
+  svg.appendChild(el('line',{x1:XBAT-22,y1:YT+60,x2:XBAT+22,y2:YT+60,stroke:fg,'stroke-width':3}));
+  svg.appendChild(el('line',{x1:XBAT-12,y1:YT+72,x2:XBAT+12,y2:YT+72,stroke:fg,'stroke-width':3}));
+  pl(svg,[[XBAT,YT+72],[XBAT,YB-60]],ln,2,'');
+  svg.appendChild(el('rect',{x:XBAT-30,y:YT+100,width:60,height:170,fill:bg,stroke:'none'}));
+  svg.appendChild(el('text',{x:XBAT,y:YT+150,'text-anchor':'middle','font-size':15,'font-weight':500,fill:fg},'12 V'));
+  svg.appendChild(el('text',{x:XBAT,y:YT+170,'text-anchor':'middle','font-size':11,fill:fg2},'supply'));
+  pl(svg,[[XBAT,YT+72],[XBAT,YT+100]],ln,2);pl(svg,[[XBAT,YT+270],[XBAT,YB-60]],ln,2);
+  svg.appendChild(el('text',{x:XBAT+28,y:YT+64,'font-size':13,fill:fg2},'+'));
+  svg.appendChild(el('text',{x:(XL+XR)/2,y:YT-12,'text-anchor':'middle','font-size':12,fill:fg2},'+12 V rail'));
+  svg.appendChild(el('text',{x:(XL+XR)/2,y:YB+22,'text-anchor':'middle','font-size':12,fill:fg2},'ground'));
+  svg.appendChild(el('text',{x:XL-14,y:YM-8,'text-anchor':'end','font-size':13,'font-weight':500,fill:fg},'A'));
+  svg.appendChild(el('text',{x:XR+14,y:YM-8,'font-size':13,'font-weight':500,fill:fg},'B'));
+  // diodes (all point upward: cathode towards the + side)
+  legs.forEach((g,k)=>{const x=g.x+g.dx,y=(g.y1+g.y2)/2,c=res[k].by==='d'?dio:fg2;
+    svg.appendChild(el('polygon',{points:`${x-9},${y+7} ${x+9},${y+7} ${x},${y-7}`,fill:res[k].by==='d'?dio:bg,stroke:c,'stroke-width':1.5}));
+    svg.appendChild(el('line',{x1:x-9,y1:y-7,x2:x+9,y2:y-7,stroke:c,'stroke-width':2}));
+    svg.appendChild(el('text',{x:x+(g.dx<0?-14:14),y:y+4,'text-anchor':g.dx<0?'end':'start','font-size':11,fill:c},g.d));});
+  // switches (clickable)
+  legs.forEach((g,k)=>{const y=(g.y1+g.y2)/2,grp=el('g',{class:'sw','data-k':k});
+    const isOn=!!q[k],sc=fault&&isOn&&q[k^1]?bad:(isOn?on:fg2);
+    grp.appendChild(el('rect',{x:g.x-30,y:y-22,width:60,height:44,rx:7,fill:isOn?onbg:bg,stroke:sc,'stroke-width':isOn?2.5:1.5}));
+    grp.appendChild(el('text',{x:g.x,y:y-3,'text-anchor':'middle','font-size':14,'font-weight':500,fill:sc},g.name));
+    grp.appendChild(el('text',{x:g.x,y:y+14,'text-anchor':'middle','font-size':11,fill:sc},isOn?'ON':'OFF'));
+    grp.addEventListener('click',()=>{ $('pwmOn').checked=false;q[k]=q[k]?0:1;describe(); });
+    svg.appendChild(grp);});
+  // motor
+  const mx=(XL+XR)/2,my=YM,mr=40;
+  svg.appendChild(el('circle',{cx:mx,cy:my,r:mr,fill:bg,stroke:fg,'stroke-width':2}));
+  const a=th/100;
+  for(let n=0;n<3;n++){const an=a+n*2*Math.PI/3;svg.appendChild(el('line',{x1:mx,y1:my,x2:mx+(mr-8)*Math.cos(an),y2:my+(mr-8)*Math.sin(an),stroke:fg2,'stroke-width':4,'stroke-linecap':'round'}));}
+  svg.appendChild(el('circle',{cx:mx,cy:my,r:6,fill:fg}));
+  svg.appendChild(el('text',{x:mx,y:my+mr+18,'text-anchor':'middle','font-size':13,'font-weight':500,fill:fg},'M'));
+  if(Math.abs(i)>1e-3&&!fault){const dx=s>0?1:-1,ax=mx+dx*(mr+40);
+    svg.appendChild(el('path',{d:`M${ax-dx*10},${my-16} L${ax+dx*4},${my-16} M${ax-dx*2},${my-21} L${ax+dx*4},${my-16} L${ax-dx*2},${my-11}`,stroke:cur,'stroke-width':2,fill:'none'}));
+    svg.appendChild(el('text',{x:ax-dx*3,y:my-26,'text-anchor':'middle','font-size':11,fill:cur},'I'));}
+}
+
+// ---------- explanation ----------
+function describe(){
+  const key=q.join(''),d=$('desc');d.className='desc';
+  if($('pwmOn').checked){
+    const dir=$('pdir').value=='f'?'forward (Q1+Q4)':'reverse (Q2+Q3)';
+    const off=$('pdec').value=='slow'?'Q2+Q4 on, so the motor is shorted through the low side and current keeps circulating while it slowly decays':'everything off, so the motor current is forced back into the supply through two body diodes and falls quickly';
+    d.innerHTML=`<b>PWM:</b> for ${Math.round(duty()*100)}% of each period the bridge drives ${dir}. For the rest it has ${off}. ${$('pdec').value=='slow'?"The motor's inductance smooths the current, so the average voltage (and speed) follows the duty cycle.":"With a light load the current often reaches zero before the period ends. The terminals then float at the back-EMF, so the speed comes out higher than the duty cycle suggests. Slow decay avoids this and gives more linear speed control."} Use 0.001× slow to watch individual switching periods.`;return;}
+  const T={
+    '1001':'<b>Forward:</b> Q1 and Q4 on. Current flows from the + rail through Q1, through the motor from A to B, and down through Q4 to ground.',
+    '0110':'<b>Reverse:</b> Q3 and Q2 on. The current through the motor flips to B → A, so the motor spins the other way. Reversing is the whole point of an H-bridge.',
+    '0000':'<b>Coast:</b> everything off. With no current path the motor just freewheels. If current was flowing when you switched off, the motor\'s inductance keeps it going for a moment through two body diodes back into the supply (amber).',
+    '0101':'<b>Brake (low side):</b> Q2 and Q4 on short the motor terminals together. A spinning motor acts as a generator, its back-EMF drives current around the short and the resulting torque brakes it hard.',
+    '1010':'<b>Brake (high side):</b> Q1 and Q3 short the motor through the top rail instead. Same braking effect as the low-side version.',
+    '1100':'<b>Shoot-through!</b> Q1 and Q2 are both on, so the left leg shorts the supply straight to ground. In real hardware this destroys the transistors. Drivers add dead time between switching one off and the other on to prevent it.',
+    '0011':'<b>Shoot-through!</b> Q3 and Q4 are both on, so the right leg shorts the supply straight to ground. In real hardware this destroys the transistors. Drivers add dead time to prevent it.',
+    '1111':'<b>Shoot-through!</b> Both legs short the supply to ground.'};
+  if((q[0]&&q[1])||(q[2]&&q[3])){d.className='desc bad';d.innerHTML=T[key]||'<b>Shoot-through!</b> A high and a low switch on the same side are both on, which shorts the supply to ground. Real drivers add dead time to prevent this.';return;}
+  if(T[key]){d.innerHTML=T[key];return;}
+  d.innerHTML='<b>One side driven, the other floating:</b> with only one switch per side (or none) on one leg, current can only complete its loop through a body diode, so the motor gets little or no drive. Pick one high switch and the opposite low switch to drive it.';
+}
+
+// ---------- plots ----------
+function setup(c){const r=window.devicePixelRatio||1,W=c.clientWidth,H=+c.getAttribute('height');c.width=W*r;c.height=H*r;c.style.height=H+'px';const x=c.getContext('2d');x.setTransform(r,0,0,r,0,0);x.clearRect(0,0,W,H);x.font='11px system-ui,sans-serif';return{x,W,H};}
+function drawScope(){
+  const {x,W,H}=setup($('scope')),L0=36,R0=W-36,T0=8,B0=H-16,mid=(T0+B0)/2,n=scopeBuf.length;
+  x.strokeStyle=css('--line');x.lineWidth=0.5;x.beginPath();x.moveTo(L0,mid);x.lineTo(R0,mid);x.moveTo(L0,T0);x.lineTo(L0,B0);x.moveTo(R0,T0);x.lineTo(R0,B0);x.stroke();
+  let imax=0.5;scopeBuf.forEach(p=>imax=Math.max(imax,Math.abs(p[1])));imax=Math.ceil(imax);
+  const vmax=14;
+  const tr=(idx,sc,col)=>{x.strokeStyle=col;x.lineWidth=1.5;x.beginPath();scopeBuf.forEach((p,k)=>{const X=L0+(R0-L0)*k/Math.max(1,n-1),Y=mid-(B0-T0)/2*p[idx]/sc;k?x.lineTo(X,Y):x.moveTo(X,Y);});x.stroke();};
+  tr(0,vmax,css('--v'));tr(1,imax,css('--cur'));
+  x.fillStyle=css('--v');x.fillText('+'+vmax+'V',2,T0+8);x.fillText('−'+vmax+'V',2,B0);
+  x.fillStyle=css('--cur');x.textAlign='right';x.fillText('+'+imax+'A',W-2,T0+8);x.fillText('−'+imax+'A',W-2,B0);x.textAlign='left';
+  x.fillStyle=css('--fg3');x.fillText(scopeLabel,L0,H-2);
+}
+function drawSpd(){
+  const {x,W,H}=setup($('spd')),L0=36,R0=W-6,T0=6,B0=H-6,mid=(T0+B0)/2,n=spdBuf.length;
+  let m=1000;spdBuf.forEach(v=>m=Math.max(m,Math.abs(v)));m=Math.ceil(m/1000)*1000;
+  x.strokeStyle=css('--line');x.lineWidth=0.5;x.beginPath();x.moveTo(L0,mid);x.lineTo(R0,mid);x.stroke();
+  x.strokeStyle=css('--on');x.lineWidth=1.5;x.beginPath();spdBuf.forEach((v,k)=>{const X=L0+(R0-L0)*k/239,Y=mid-(B0-T0)/2*v/m;k?x.lineTo(X,Y):x.moveTo(X,Y);});x.stroke();
+  x.fillStyle=css('--fg3');x.fillText('+'+m/1000+'k',2,T0+8);x.fillText('rpm',2,mid+4);x.fillText('−'+m/1000+'k',2,B0);
+}
+
+// ---------- main loop ----------
+let scopeWin=2e-3,scopeEvery=2,scopeCnt=0,scopeLabel='';
+function configScope(){
+  scopeWin=$('pwmOn').checked?Math.max(2/freq(),2e-4):2e-3;
+  scopeEvery=Math.max(1,Math.round(scopeWin/DT/600));scopeBuf=[];
+  scopeLabel=$('pwmOn').checked?`last 2 PWM periods (${(scopeWin*1000).toFixed(2)} ms)`:`last ${scopeWin*1000} ms`;
+}
+let last=performance.now();
+function frame(now){
+  const real=Math.min(0.05,(now-last)/1000);last=now;
+  const steps=Math.round(real*+$('ts').value/DT);
+  for(let k=0;k<steps;k++){simStep();if(++scopeCnt>=scopeEvery){scopeCnt=0;scopeBuf.push([vab,i]);if(scopeBuf.length>600)scopeBuf.shift();}}
+  spdBuf.push(w*60/(2*Math.PI));if(spdBuf.length>240)spdBuf.shift();
+  $('sI').textContent=(fault?'short!':i.toFixed(2)+' A');
+  $('sV').textContent=(fault?'-':vab.toFixed(1)+' V');
+  $('sW').textContent=Math.round(w*60/(2*Math.PI))+' rpm';
+  draw();drawScope();drawSpd();
+  requestAnimationFrame(frame);
+}
+
+document.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>{$('pwmOn').checked=false;q=b.dataset.p.split('').map(Number);describe();configScope();});
+$('pwmOn').onchange=()=>{describe();configScope();};
+['pdir','pdec'].forEach(id=>$(id).onchange=()=>{cachePWM();describe();});
+$('duty').oninput=()=>{$('dutyv').textContent=$('duty').value+'%';cachePWM();describe();};
+$('freq').oninput=()=>{cachePWM();const f=freq();$('freqv').textContent=f>=1000?(f/1000).toFixed(1)+' kHz':f+' Hz';configScope();};
+$('freq').oninput();describe();configScope();
+requestAnimationFrame(frame);
+</script>
+</body></html>
